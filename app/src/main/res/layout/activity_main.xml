@@ -36,8 +36,8 @@
         android:layout_height="64dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="367dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="353dp"
         android:text="Flash!" />
 
     <EditText
