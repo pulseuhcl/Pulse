@@ -15,6 +15,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import java.util.Timer;
 import org.w3c.dom.Text;
 
@@ -30,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
     Boolean light = true;
     private CameraManager cameraManager;
     private String cameraID;
-    private int frequency;
+    private long frequency;
     Boolean startPattern = false;
     ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(1);
     @Override
@@ -74,19 +77,34 @@ public class MainActivity extends AppCompatActivity {
             }
     }
 
+    public void toast(String msg){
+        Context context = getApplicationContext();
+        CharSequence text = msg;
+        int duration = Toast.LENGTH_SHORT;
+
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.show();
+    }
+
     private void FlashButtonClicked() {
-        startPattern = true;
-        frequency = Integer.parseInt(frequencyInput.getText().toString());
-        while(startPattern){
-            for(int x = 0; x < frequency; x++){
-                enableTorch();
-            }
+            startPattern = true;
             try{
-                Thread.sleep(1000);
-            }catch(Exception e){
-                e.printStackTrace();
+                frequency = Long.parseLong(frequencyInput.getText().toString());
+            }catch(NumberFormatException e){
+                Toast.makeText(getBaseContext(), "value not acceptable", Toast.LENGTH_LONG).show();
             }
-        }
+            frequency = 1000/frequency;
+            while(startPattern){
+                enableTorch();
+                try{
+                    // see if you can figure out why I can't pass the user input into the
+                    //Thread.sleep() method without it fucking up. When you change it manually with
+                    // a long input, it works just fine.
+                    Thread.sleep(frequency);
+                }catch(Exception e){
+                    e.printStackTrace();
+                }
+            }
     }
 
     // Event listener for FlashButton
