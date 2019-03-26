@@ -68,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
                 light = true;
             }
     }
+    
 
     public void toast(String msg){
         Context context = getApplicationContext();
@@ -113,6 +114,12 @@ public class MainActivity extends AppCompatActivity {
 
     private void StopButtonClicked(){
         startPattern = false;
+        try{
+            cameraManager.setTorchMode(cameraID, false);
+        }catch(CameraAccessException e){
+            e.printStackTrace();
+        }
+
         recreate();
     }
 
