@@ -113,6 +113,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void StopButtonClicked(){
         startPattern = false;
+        recreate();
     }
 
     private View.OnClickListener StopButtonOnClickListener = new View.OnClickListener(){
