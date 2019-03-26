@@ -34,9 +34,9 @@ public class MainActivity extends AppCompatActivity {
         flashButton = findViewById(R.id.FlashButton);
         flashButton.setOnClickListener(FlashButtonOnClickListener);
         getSystemService(Context.CAMERA_SERVICE);
-        try{
+        try {
             cameraID = cameraManager.getCameraIdList()[0];
-        }catch (CameraAccessException e){
+        } catch (CameraAccessException e) {
             e.printStackTrace();
         }
     }
@@ -44,23 +44,21 @@ public class MainActivity extends AppCompatActivity {
     TimerTask task = new TimerTask() {
         @Override
         public void run() {
-            if(light) {
+            if (light) {
                 try {
                     cameraManager.setTorchMode(cameraID, true);
                 } catch (CameraAccessException e) {
                     e.printStackTrace();
                 }
-                light=false;
-            }
-
-            else{
-                try{
+                light = false;
+            } else {
+                try {
                     cameraManager.setTorchMode(cameraID, false);
-                }catch(CameraAccessException e){
+                } catch (CameraAccessException e) {
                     e.printStackTrace();
                 }
 
-                light=true;
+                light = true;
             }
         }
     };
@@ -78,3 +76,5 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 }
+//
+
