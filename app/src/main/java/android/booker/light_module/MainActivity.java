@@ -52,23 +52,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void enableTorch() {
-            if (light) {
-                try {
-                    cameraManager.setTorchMode(cameraID, true);
-                } catch (CameraAccessException e) {
-                    e.printStackTrace();
-                }
-                light = false;
-            } else {
-                try {
-                    cameraManager.setTorchMode(cameraID, false);
-                } catch (CameraAccessException e) {
-                    e.printStackTrace();
-                }
-                light = true;
+        if(light){
+            try {
+                cameraManager.setTorchMode(cameraID, true);
+            } catch (CameraAccessException e) {
+                e.printStackTrace();
             }
+            light = false;
+        }
     }
-    
+
+    private void disableTorch(){
+        if(!light){
+            try {
+                cameraManager.setTorchMode(cameraID, false);
+            } catch (CameraAccessException e) {
+                e.printStackTrace();
+            }
+            light = true;
+        }
+    }
+
 
     public void toast(String msg){
         Context context = getApplicationContext();
@@ -88,9 +92,10 @@ public class MainActivity extends AppCompatActivity {
             } catch (NumberFormatException e) {
                 Toast.makeText(getBaseContext(), "value not acceptable", Toast.LENGTH_LONG).show();
             }
-            frequency = 1000 / frequency;
+            frequency = 1000 / (frequency);
             while (startPattern) {
                 enableTorch();
+                disableTorch();
                 try {
                     Thread.sleep(frequency);
                 } catch (Exception e) {
