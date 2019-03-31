@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_dark"
+    tools:context=".Login_Page">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="93dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/colorPrimary"
+        android:gravity="center_horizontal"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/Profile_Spinner"
+        android:layout_width="89dp"
+        android:layout_height="82dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:spinnerMode="dropdown"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/Flicker_Title_Text"
+        android:layout_width="123dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center_horizontal"
+        android:text="@string/Flicker_Title_Text"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintEnd_toStartOf="@+id/Settings_Spinner"
+        app:layout_constraintStart_toEndOf="@+id/Profile_Spinner"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/Settings_Spinner"
+        android:layout_width="89dp"
+        android:layout_height="82dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:spinnerMode="dropdown"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/UserName_EditText"
+        android:layout_width="178dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="8dp"
+        android:background="@android:color/darker_gray"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/Username"
+        android:autofillHints="@string/Username"
+        app:layout_constraintBottom_toBottomOf="@+id/Username_Container"
+        app:layout_constraintEnd_toEndOf="@+id/Username_Container"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toEndOf="@+id/Username_TextView"
+        app:layout_constraintTop_toTopOf="@+id/Username_Container"
+        app:layout_constraintVertical_bias="0.03" />
+
+    <TextView
+        android:id="@+id/Username_TextView"
+        android:layout_width="163dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="24dp"
+        android:gravity="center"
+        android:text="@string/Username"
+        android:textColor="@android:color/holo_green_dark"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/Username_Container"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Username_Container"
+        app:layout_constraintVertical_bias="0.768" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/Username_Container"
+        android:layout_width="395dp"
+        android:layout_height="220dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.289">
+
+        <TextView
+            android:id="@+id/Password_TextView"
+            android:layout_width="163dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="120dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:text="@string/Password"
+            android:textColor="@android:color/holo_green_dark"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.071" />
+
+        <EditText
+            android:id="@+id/Password_EditText"
+            android:layout_width="178dp"
+            android:layout_height="57dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@android:color/darker_gray"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:text="@string/Password"
+            android:autofillHints="@string/Password"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.541"
+            app:layout_constraintStart_toEndOf="@+id/Password_TextView"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.79" />
+    </android.support.constraint.ConstraintLayout>
+
+    <Button
+        android:id="@+id/Login_Button"
+        android:layout_width="213dp"
+        android:layout_height="105dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Login"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Username_Container" />
+
+</android.support.constraint.ConstraintLayout>
