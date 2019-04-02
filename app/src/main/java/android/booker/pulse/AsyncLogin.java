@@ -20,7 +20,7 @@ public class AsyncLogin extends AsyncTask<String, String, String> {
     private Login_Page login_page;
     HttpURLConnection conn;
     URL url = null;
-
+    User currentUser = new User();
     public AsyncLogin(Login_Page login_page){
         this.login_page = login_page;
     }
@@ -34,7 +34,7 @@ public class AsyncLogin extends AsyncTask<String, String, String> {
     @Override
     protected String doInBackground(String... params){
         try{
-            url = new URL("http://23e3b971.ngrok.io/pulse/login.php");
+            url = new URL("http://c6a5f93e.ngrok.io/pulse/login.php");
         }catch(MalformedURLException e){
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -56,6 +56,10 @@ public class AsyncLogin extends AsyncTask<String, String, String> {
                     .appendQueryParameter("username", params[0])
                     .appendQueryParameter("password", params[1]);
             String query = builder.build().getEncodedQuery();
+
+            // set the params to the User object
+            currentUser.setUserName(params[0]);
+            currentUser.setPassword(params[1]);
 
             // Open connection for sending data
             OutputStream os = conn.getOutputStream();
@@ -104,10 +108,12 @@ public class AsyncLogin extends AsyncTask<String, String, String> {
         // this method will be running on a UI thread
 
         if(result.equalsIgnoreCase("true")){
-           Intent intent = new Intent(login_page, User_Logged_In.class);
-            login_page.startActivity(intent);
-            login_page.finish();
             Toast.makeText(login_page, "Login success!", Toast.LENGTH_LONG).show();
+            // give a brief wait so the user can see the login success Toast
+            Intent intent = new Intent(login_page, User_Logged_In.class);
+            // this passes the serialized user object to the next activity for further use
+            intent.putExtra("currentUser", currentUser);
+            login_page.startActivity(intent);
         } else if (result.equalsIgnoreCase("false")) {
             // If username and password does not match display the error
             Toast.makeText(login_page, "Login error!", Toast.LENGTH_LONG).show();

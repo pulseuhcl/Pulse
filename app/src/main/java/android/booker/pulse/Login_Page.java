@@ -15,12 +15,13 @@ public class Login_Page extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login_page);
+        setContentView(R.layout.activity_login_page);
         // map the variables to their GUI counterparts
         loginButton = findViewById(R.id.Login_Button);
         usernameInput = findViewById(R.id.UserName_EditText);
         passwordInput = findViewById(R.id.Password_EditText);
         loginButton.setOnClickListener(LoginButtonListener);
+        // instantiate a User object
     }
 
     // Listeners go here
