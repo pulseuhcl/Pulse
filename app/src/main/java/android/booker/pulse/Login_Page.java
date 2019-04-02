@@ -21,6 +21,7 @@ public class Login_Page extends AppCompatActivity {
         usernameInput = findViewById(R.id.UserName_EditText);
         passwordInput = findViewById(R.id.Password_EditText);
         loginButton.setOnClickListener(LoginButtonListener);
+        // instantiate a User object
     }
 
     // Listeners go here
