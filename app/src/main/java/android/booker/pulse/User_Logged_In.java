@@ -3,7 +3,7 @@ import java.io.Serializable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
-
+//
 public class User_Logged_In extends AppCompatActivity {
     User currentUser = new User();
     private User_Logged_In userLoggedIn;
