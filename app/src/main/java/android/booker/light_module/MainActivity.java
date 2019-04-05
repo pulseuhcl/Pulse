@@ -92,12 +92,18 @@ public class MainActivity extends AppCompatActivity {
             } catch (NumberFormatException e) {
                 Toast.makeText(getBaseContext(), "value not acceptable", Toast.LENGTH_LONG).show();
             }
-            frequency = 1000 / (frequency);
+            long milliSeconds = 1000 / (frequency);
             while (startPattern) {
-                enableTorch();
-                disableTorch();
+                long finishTime = System.currentTimeMillis() + 20;
+                while(System.currentTimeMillis() <= finishTime){
+                    enableTorch();
+                }
+                finishTime = System.currentTimeMillis() + 20;
+                while(System.currentTimeMillis() <= finishTime){
+                    disableTorch();
+                }
                 try {
-                    Thread.sleep(frequency);
+                    Thread.sleep(milliSeconds);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
