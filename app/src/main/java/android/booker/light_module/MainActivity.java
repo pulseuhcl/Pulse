@@ -94,12 +94,12 @@ public class MainActivity extends AppCompatActivity {
             }
             long milliSeconds = 1000 / (frequency);
             while (startPattern) {
-                long finishTime = System.currentTimeMillis() + 20;
-                while(System.currentTimeMillis() <= finishTime){
+                long finishTime = System.nanoTime() + 20000000;
+                while(System.nanoTime() <= finishTime){
                     enableTorch();
                 }
-                finishTime = System.currentTimeMillis() + 20;
-                while(System.currentTimeMillis() <= finishTime){
+                finishTime = System.nanoTime() + 20000000;
+                while(System.nanoTime() <= finishTime){
                     disableTorch();
                 }
                 try {
