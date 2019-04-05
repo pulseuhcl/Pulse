@@ -7,6 +7,16 @@
     android:background="@android:color/holo_blue_dark"
     tools:context=".MainActivity">
 
+    <Button
+        android:id="@+id/flashButton"
+        android:layout_width="120dp"
+        android:layout_height="64dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="483dp"
+        android:text="Flash!" />
+
     <TextView
         android:id="@+id/FrequencyInputTextView"
         android:layout_width="wrap_content"
@@ -31,23 +41,23 @@
         android:textSize="30sp" />
 
     <Button
-        android:id="@+id/FlashButton"
+        android:id="@+id/stopButton"
         android:layout_width="120dp"
         android:layout_height="64dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="42dp"
-        android:layout_marginTop="353dp"
-        android:text="Flash!" />
+        android:layout_marginStart="191dp"
+        android:layout_marginTop="483dp"
+        android:text="Stop" />
 
     <EditText
         android:id="@+id/frequencyInputEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="37dp"
-        android:layout_marginBottom="483dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="199dp"
         android:ems="10"
         android:inputType="number" />
 
