@@ -4,11 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-<<<<<<< Updated upstream
-    android:background="@android:color/background_dark"
-=======
     android:background="@android:color/black"
->>>>>>> Stashed changes
     tools:context=".Register_Page">
 
 

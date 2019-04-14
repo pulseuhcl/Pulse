@@ -81,27 +81,19 @@
         android:layout_height="76dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-<<<<<<< Updated upstream
-        android:layout_marginBottom="164dp"
-=======
         android:layout_marginBottom="116dp"
         android:background="@color/Teal"
         android:backgroundTint="@color/shadow_black"
         android:backgroundTintMode="screen"
         android:elevation="4dp"
         android:fontFamily="sans-serif-medium"
->>>>>>> Stashed changes
         android:text="Login"
         android:textAlignment="center"
         android:textSize="24sp"
         android:typeface="monospace"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-<<<<<<< Updated upstream
         app:layout_constraintHorizontal_bias="0.51"
-=======
-        app:layout_constraintHorizontal_bias="0.494"
->>>>>>> Stashed changes
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
