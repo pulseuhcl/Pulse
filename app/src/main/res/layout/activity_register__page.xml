@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+<<<<<<< Updated upstream
+    android:background="@android:color/background_dark"
+=======
+    android:background="@android:color/black"
+>>>>>>> Stashed changes
+    tools:context=".Register_Page">
+
+
+    <!--     Main Nav bar Begin       -->
+    <!-- bar -->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="415dp"
+        android:layout_height="92dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/DarkGray"
+        android:gravity="center_horizontal"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- user icon -->
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="67dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/user" />
+
+
+    <!-- Gear icon -->
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="67dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/gear" />
+
+    <!-- Flicker text -->
+    <TextView
+        android:id="@+id/Flicker_Title_Text"
+        android:layout_width="191dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/viga"
+        android:gravity="center_horizontal"
+        android:text="@string/Flicker_Title_Text"
+        android:textColor="@color/DustyGreen"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintEnd_toStartOf="@+id/imageView4"
+        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.625"
+        tools:text="Flicker" />
+    <!--       Main Nav bar End         -->
+
+
+
+
+    <!-- user text -->
+    <TextView
+        android:id="@+id/Username_TextView"
+        android:layout_width="180dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center|left"
+        android:text="Username:"
+        android:textColor="@color/Teal"
+        android:textScaleX=".85"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <!-- User input text -->
+    <EditText
+        android:id="@+id/UserName_EditText"
+        android:layout_width="178dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/transparent"
+        android:backgroundTint="@color/DarkGray"
+        android:drawableBottom="@color/Teal"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:selectAllOnFocus="false"
+        android:singleLine="true"
+        android:textAlignment="viewStart"
+        app:layout_constraintBottom_toBottomOf="@+id/UsernameToolBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Username_TextView"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <!--User Bar -->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/UsernameToolBar"
+        android:layout_width="375dp"
+        android:layout_height="2dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/Teal"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintBottom_toBottomOf="@+id/Username_TextView"
+        app:layout_constraintEnd_toEndOf="@+id/UserName_EditText"
+        app:layout_constraintStart_toStartOf="@+id/Username_TextView" />
+
+
+
+    <!-- Fname text -->
+    <TextView
+        android:id="@+id/Fname_TextView"
+        android:layout_width="180dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center|left"
+        android:text="First Name:"
+        android:textColor="@color/Teal"
+        android:textScaleX=".85"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Username_TextView" />
+
+    <!-- Fname input text -->
+    <EditText
+        android:id="@+id/FName_EditText"
+        android:layout_width="178dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/transparent"
+        android:backgroundTint="@color/DarkGray"
+        android:drawableBottom="@color/Teal"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:selectAllOnFocus="false"
+        android:singleLine="true"
+        android:textAlignment="viewStart"
+        app:layout_constraintBottom_toBottomOf="@+id/FnameToolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Fname_TextView"
+        app:layout_constraintTop_toBottomOf="@+id/UserName_EditText" />
+
+    <!-- Fname bar -->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/FnameToolbar"
+        android:layout_width="375dp"
+        android:layout_height="2dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/Teal"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintBottom_toBottomOf="@+id/Fname_TextView"
+        app:layout_constraintEnd_toEndOf="@+id/FName_EditText"
+        app:layout_constraintStart_toStartOf="@+id/Fname_TextView" />
+
+
+
+    <!-- Lname text -->
+    <TextView
+        android:id="@+id/Lname_TextView"
+        android:layout_width="180dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center|left"
+        android:text="Last Name:"
+        android:textColor="@color/Teal"
+        android:textScaleX=".85"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Fname_TextView" />
+
+    <!-- Lname input text -->
+    <EditText
+        android:id="@+id/Lname_EditText"
+        android:layout_width="178dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/transparent"
+        android:backgroundTint="@color/DarkGray"
+        android:drawableBottom="@color/Teal"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:selectAllOnFocus="false"
+        android:singleLine="true"
+        android:textAlignment="viewStart"
+        app:layout_constraintBottom_toBottomOf="@+id/LnameToolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Lname_TextView"
+        app:layout_constraintTop_toBottomOf="@+id/FName_EditText"
+        app:layout_constraintVertical_bias="1.0" />
+    <!-- Lname bar -->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/LnameToolbar"
+        android:layout_width="375dp"
+        android:layout_height="2dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/Teal"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintBottom_toBottomOf="@+id/Lname_TextView"
+        app:layout_constraintEnd_toEndOf="@+id/Lname_EditText"
+        app:layout_constraintStart_toStartOf="@+id/Lname_TextView" />
+
+
+
+    <!-- Initials text -->
+    <TextView
+        android:id="@+id/Initials_TextView"
+        android:layout_width="180dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center|left"
+        android:text="Initials:"
+        android:textColor="@color/Teal"
+        android:textScaleX=".85"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Lname_TextView" />
+
+    <!-- Initals input text -->
+    <EditText
+        android:id="@+id/Initials_EditText"
+        android:layout_width="178dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/transparent"
+        android:backgroundTint="@color/DarkGray"
+        android:drawableBottom="@color/Teal"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:selectAllOnFocus="false"
+        android:singleLine="true"
+        android:textAlignment="viewStart"
+        app:layout_constraintBottom_toTopOf="@+id/InitialsToolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Initials_TextView"
+        app:layout_constraintTop_toBottomOf="@+id/Lname_EditText" />
+    <!-- Initials bar -->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/InitialsToolbar"
+        android:layout_width="375dp"
+        android:layout_height="2dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/Teal"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintBottom_toBottomOf="@+id/Initials_TextView"
+        app:layout_constraintEnd_toEndOf="@+id/Initials_EditText"
+        app:layout_constraintStart_toStartOf="@+id/Initials_TextView" />
+
+
+
+    <!-- PhoneNum text -->
+    <TextView
+        android:id="@+id/PhoneNum_TextView"
+        android:layout_width="180dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center|left"
+        android:text="Phone number:"
+        android:textColor="@color/Teal"
+        android:textScaleX=".85"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Initials_TextView" />
+
+    <!-- PhoneNum input text -->
+    <EditText
+        android:id="@+id/PhoneNum_EditText"
+        android:layout_width="178dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/transparent"
+        android:backgroundTint="@color/DarkGray"
+        android:drawableBottom="@color/Teal"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:selectAllOnFocus="false"
+        android:singleLine="true"
+        android:textAlignment="viewStart"
+        app:layout_constraintBottom_toBottomOf="@+id/PhoneNumToolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/PhoneNum_TextView"
+        app:layout_constraintTop_toBottomOf="@+id/Initials_EditText" />
+    <!-- PhoneNum bar -->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/PhoneNumToolbar"
+        android:layout_width="375dp"
+        android:layout_height="2dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/Teal"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintBottom_toBottomOf="@+id/PhoneNum_TextView"
+        app:layout_constraintEnd_toEndOf="@+id/PhoneNum_EditText"
+        app:layout_constraintStart_toStartOf="@id/PhoneNum_TextView" />
+
+
+
+    <!-- Password text -->
+    <TextView
+        android:id="@+id/Password_TextView2"
+        android:layout_width="180dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center|left"
+        android:text="Password:"
+        android:textColor="@color/Teal"
+        android:textScaleX=".85"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PhoneNum_TextView" />
+
+    <!-- Password input text -->
+    <EditText
+        android:id="@+id/Password_EditText2"
+        android:layout_width="178dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:background="@android:color/darker_gray"
+        android:backgroundTint="@color/transparent"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="@+id/PasswordTooblar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Password_TextView2"
+        app:layout_constraintTop_toBottomOf="@+id/PhoneNum_EditText" />
+    <!-- Password bar -->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/PasswordTooblar"
+        android:layout_width="375dp"
+        android:layout_height="2dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/Teal"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintBottom_toBottomOf="@+id/Password_TextView2"
+        app:layout_constraintEnd_toEndOf="@+id/Password_EditText2"
+        app:layout_constraintStart_toStartOf="@id/Password_TextView2" />
+
+
+
+    <!-- Password confirm text -->
+    <TextView
+        android:id="@+id/PasswordConfirm_TextView2"
+        android:layout_width="180dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center|left"
+        android:text="Confirm Password:"
+        android:textColor="@color/Teal"
+        android:textScaleX=".85"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Password_TextView2" />
+
+    <!-- Password confirm input text -->
+    <EditText
+        android:id="@+id/PasswordConfirm_EditText2"
+        android:layout_width="178dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="24dp"
+        android:background="@android:color/darker_gray"
+        android:backgroundTint="@color/transparent"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="@+id/PasswordConfirmTooblar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/PasswordConfirm_TextView2"
+        app:layout_constraintTop_toBottomOf="@+id/Password_EditText2"
+        app:layout_constraintVertical_bias="0.02" />
+    <!-- Password bar -->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/PasswordConfirmTooblar"
+        android:layout_width="375dp"
+        android:layout_height="2dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/Teal"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintBottom_toBottomOf="@+id/PasswordConfirm_TextView2"
+        app:layout_constraintEnd_toEndOf="@id/PasswordConfirm_EditText2"
+        app:layout_constraintStart_toStartOf="@id/PasswordConfirm_TextView2" />
+
+
+    <Button
+        android:id="@+id/Login_Button"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="163dp"
+        android:layout_height="76dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/Teal"
+        android:backgroundTint="@color/shadow_black"
+        android:backgroundTintMode="screen"
+        android:elevation="4dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Sign up"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:typeface="monospace"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PasswordConfirmTooblar" />
+
+
+
+</android.support.constraint.ConstraintLayout>

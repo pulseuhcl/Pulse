@@ -1,6 +1,6 @@
 <resources>
-    <string name="Pulse">Pulse</string>
-    <string name="Owner">Owner</string>
-    <string name="Guest">Guest</string>
-
+    <string name="Flicker_Title_Text">Pulse</string>
+    <string name="Username">Username</string>
+    <string name="Password">Password</string>
+    <string name="Flicker">Flicker</string>
 </resources>
