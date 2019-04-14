@@ -37,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        frequencyInput = findViewById(R.id.frequencyInputEditText);
         flashButton = findViewById(R.id.flashButton);
         flashButton.setOnClickListener(FlashButtonOnClickListener);
         stopButton = findViewById(R.id.stopButton);
@@ -87,25 +86,14 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void run() {
             startPattern = true;
-            try {
-                frequency = Long.parseLong(frequencyInput.getText().toString());
-            } catch (NumberFormatException e) {
-                Toast.makeText(getBaseContext(), "value not acceptable", Toast.LENGTH_LONG).show();
-            }
-            long milliSeconds = 1000 / (frequency);
             while (startPattern) {
-                long finishTime = System.nanoTime() + 20000000;
-                while(System.nanoTime() <= finishTime){
-                    enableTorch();
+                long finishTime = System.currentTimeMillis() + 50;
+                enableTorch();
+                while(System.currentTimeMillis() <= finishTime){
                 }
-                finishTime = System.nanoTime() + 20000000;
-                while(System.nanoTime() <= finishTime){
-                    disableTorch();
-                }
-                try {
-                    Thread.sleep(milliSeconds);
-                } catch (Exception e) {
-                    e.printStackTrace();
+                disableTorch();
+                finishTime = System.currentTimeMillis() + 50;
+                while(System.currentTimeMillis() <= finishTime){
                 }
             }
         }
