@@ -8,4 +8,6 @@
     <color name="shadow_black">#C8000000</color>
     <color name="DarkGray">#262626</color>
     <color name="DustyGreen">#2E3D34</color>
+    <color name="BrightGreen">#2BDC6D</color>
+    <color name="LightBlue">#BFE3F2</color>
 </resources>
