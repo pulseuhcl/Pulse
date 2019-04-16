@@ -2,6 +2,7 @@ package android.booker.light_module;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraManager;
@@ -12,7 +13,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import java.math.BigInteger;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 
@@ -20,13 +24,10 @@ import java.util.concurrent.ScheduledExecutorService;
 public class MainActivity extends AppCompatActivity {
     private Button flashButton;
     private Button stopButton;
-    private EditText frequencyInput;
     Boolean light = true;
     private CameraManager cameraManager;
     private String cameraID;
-    private long frequency;
     Boolean startPattern = false;
-    ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(1);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -37,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        frequencyInput = findViewById(R.id.frequencyInputEditText);
         flashButton = findViewById(R.id.flashButton);
         flashButton.setOnClickListener(FlashButtonOnClickListener);
         stopButton = findViewById(R.id.stopButton);
@@ -85,29 +85,45 @@ public class MainActivity extends AppCompatActivity {
 
     Thread flasher = new Thread(new Runnable() {
         @Override
+
         public void run() {
+           // String pin = "111";
+            //char[] pinArray = pin.toCharArray();
+            char[] pinArray ={'1','1','0','0','1','1','0','1','0','1'};
+            // sum of consecutive ones to give the time for the flash to stay on
+            long delay = 100;
             startPattern = true;
-            try {
-                frequency = Long.parseLong(frequencyInput.getText().toString());
-            } catch (NumberFormatException e) {
-                Toast.makeText(getBaseContext(), "value not acceptable", Toast.LENGTH_LONG).show();
+            Boolean isOn = false;
+            long futureTime = System.currentTimeMillis() + delay;
+
+
+            for(int i = 0; i < pinArray.length; i++){
+                futureTime = System.currentTimeMillis() + delay;
+                if(pinArray[i] == '1'){
+                    if(!isOn){
+                        enableTorch();
+                        isOn = true;
+                    }
+                    while(System.currentTimeMillis() <= futureTime){
+
+                    }
+                }
+                else{
+                    if(isOn){
+                        disableTorch();
+                        isOn = false;
+                    }
+                    while(System.currentTimeMillis() <= futureTime){
+
+                    }
+                }
+
             }
-            long milliSeconds = 1000 / (frequency);
-            while (startPattern) {
-                long finishTime = System.nanoTime() + 20000000;
-                while(System.nanoTime() <= finishTime){
-                    enableTorch();
-                }
-                finishTime = System.nanoTime() + 20000000;
-                while(System.nanoTime() <= finishTime){
-                    disableTorch();
-                }
-                try {
-                    Thread.sleep(milliSeconds);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+            futureTime = System.currentTimeMillis() + delay;
+            while(System.currentTimeMillis() <= futureTime){
+
             }
+            disableTorch();
         }
     });
 
@@ -122,6 +138,10 @@ public class MainActivity extends AppCompatActivity {
             FlashButtonClicked();
         }
     };
+
+    // Event listener for focus leave pinEditText
+
+
 
     private void StopButtonClicked(){
         startPattern = false;
