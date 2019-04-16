@@ -3,12 +3,4 @@
     <string name="Username">Username</string>
     <string name="Password">Password</string>
     <string name="Flicker">Flicker</string>
-    <string name="FirstName">First Name</string>
-    <string name="LastName">Last Name</string>
-    <string name="ChangeProfile">Change Information</string>
-    <string name="ProfileButton">Profile</string>
-    <string name="Registration">Registration</string>
-    <string name="PhoneNumber">Phone Number</string>
-    <string name="Initial">Initial</string>
-    <string name="ProfileInfo">Profile Information</string>
 </resources>

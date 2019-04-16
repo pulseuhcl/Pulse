@@ -9,8 +9,7 @@ public class User implements Parcelable {
     private String firstName;
     private String lastName;
     private String initials;
-    private String phoneNumber;
-    private int pin;
+
 
     public String getUserName(){
         return userName;
@@ -19,6 +18,7 @@ public class User implements Parcelable {
     public String getPassword(){
         return password;
     }
+
 
     public String getFirstName(){
         return firstName;
@@ -30,7 +30,6 @@ public class User implements Parcelable {
 
     public String getInitials() { return initials; }
 
-    public String getPhoneNumber() {return phoneNumber; }
 
     public void setUserName(String userName) {
         this.userName = userName;
@@ -39,6 +38,7 @@ public class User implements Parcelable {
     public void setPassword(String password) {
         this.password = password;
     }
+
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
@@ -52,8 +52,6 @@ public class User implements Parcelable {
         this.initials = initials;
     }
 
-    public void setPhoneNumber(String phoneNumber) {this.phoneNumber = phoneNumber; }
-
     @Override
     public int describeContents() {
         return 0;
@@ -66,9 +64,8 @@ public class User implements Parcelable {
         out.writeString(this.firstName);
         out.writeString(this.lastName);
         out.writeString(this.initials);
-        out.writeString(this.phoneNumber);
     }
-    // Constructor for the user object
+
     public User() {
     }
 
@@ -78,7 +75,7 @@ public class User implements Parcelable {
         this.firstName = in.readString();
         this.lastName = in.readString();
         this.initials = in.readString();
-        this.phoneNumber = in.readString();
+
     }
 
     public static final Creator<User> CREATOR = new Creator<User>() {

@@ -7,66 +7,90 @@
     android:background="@android:color/background_dark"
     tools:context=".Landing_Page">
 
+    <!--     Main Nav bar Begin       -->
+    <!-- bar -->
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
-        android:layout_width="fill_parent"
-        android:layout_height="93dp"
+        android:layout_width="415dp"
+        android:layout_height="92dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:background="@color/colorPrimary"
+        android:background="@color/DarkGray"
         android:gravity="center_horizontal"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Spinner
-        android:id="@+id/Profile_Spinner"
-        android:layout_width="89dp"
-        android:layout_height="82dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="8dp"
-        android:spinnerMode="dropdown"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-        app:layout_constraintStart_toStartOf="parent" />
+    <!-- user icon -->
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="67dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/user" />
 
+
+    <!-- Gear icon -->
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="67dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/gear" />
+
+    <!-- Flicker text -->
     <TextView
         android:id="@+id/Flicker_Title_Text"
-        android:layout_width="123dp"
-        android:layout_height="wrap_content"
+        android:layout_width="191dp"
+        android:layout_height="69dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:fontFamily="@font/viga"
         android:gravity="center_horizontal"
         android:text="@string/Flicker_Title_Text"
-        android:textSize="30sp"
+        android:textColor="@color/DustyGreen"
+        android:textSize="50sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-        app:layout_constraintEnd_toStartOf="@+id/Settings_Spinner"
-        app:layout_constraintStart_toEndOf="@+id/Profile_Spinner"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/imageView4"
+        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.625"
+        tools:text="Flicker" />
+    <!--       Main Nav bar End         -->
 
-    <Spinner
-        android:id="@+id/Settings_Spinner"
-        android:layout_width="89dp"
-        android:layout_height="82dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:spinnerMode="dropdown"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-        app:layout_constraintEnd_toEndOf="parent" />
+
 
     <Button
         android:id="@+id/Login_Button"
-        android:layout_width="213dp"
-        android:layout_height="105dp"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="163dp"
+        android:layout_height="76dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="164dp"
+        android:layout_marginBottom="116dp"
+        android:background="@color/Teal"
+        android:backgroundTint="@color/shadow_black"
+        android:backgroundTintMode="screen"
+        android:elevation="4dp"
+        android:fontFamily="sans-serif-medium"
         android:text="Login"
+        android:textAlignment="center"
         android:textSize="24sp"
+        android:typeface="monospace"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.51"
@@ -80,11 +104,27 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:background="@color/transparent"
         android:text="Register"
+        android:textColor="@color/Teal"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Login_Button" />
+        app:layout_constraintTop_toBottomOf="@+id/Login_Button"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="272dp"
+        android:layout_height="461dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginBottom="176dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/pulse" />
+
+
 
 </android.support.constraint.ConstraintLayout>

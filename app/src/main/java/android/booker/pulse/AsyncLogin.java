@@ -5,10 +5,6 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -38,7 +34,7 @@ public class AsyncLogin extends AsyncTask<String, String, String> {
     @Override
     protected String doInBackground(String... params){
         try{
-            url = new URL("http://facedc8f.ngrok.io/pulse_api/login.php");
+            url = new URL("http://c6a5f93e.ngrok.io/pulse/login.php");
         }catch(MalformedURLException e){
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -94,20 +90,8 @@ public class AsyncLogin extends AsyncTask<String, String, String> {
                     result.append(line);
                     line = reader.readLine();
                 }
-                try{
-                    JSONArray jsonArray = new JSONArray(result.toString());
-                    for(int i = 0; i < jsonArray.length(); i++){
-                        JSONObject object = jsonArray.getJSONObject(i);
-                        currentUser.setUserName(object.getString("username"));
-                        currentUser.setPassword(object.getString("password"));
-                        currentUser.setFirstName(object.getString("firstname"));
-                        currentUser.setLastName(object.getString("lastname"));
-                    }
-                }catch(JSONException e){
-                    e.printStackTrace();
-                }
             // Pass data to onPostExecute method
-            return (result.toString().trim());
+            return (result.toString());
             }else{
                 return("unsuccessful");
             }
@@ -123,16 +107,14 @@ public class AsyncLogin extends AsyncTask<String, String, String> {
     protected void onPostExecute(String result){
         // this method will be running on a UI thread
 
-        if(result.contains(currentUser.getPassword())){
-
-            Toast.makeText(login_page, result, Toast.LENGTH_LONG).show();
+        if(result.equalsIgnoreCase("true")){
+            Toast.makeText(login_page, "Login success!", Toast.LENGTH_LONG).show();
             // give a brief wait so the user can see the login success Toast
             Intent intent = new Intent(login_page, User_Logged_In.class);
             // this passes the serialized user object to the next activity for further use
-
             intent.putExtra("currentUser", currentUser);
             login_page.startActivity(intent);
-        }else if (!result.contains(currentUser.getPassword())) {
+        } else if (result.equalsIgnoreCase("false")) {
             // If username and password does not match display the error
             Toast.makeText(login_page, "Login error!", Toast.LENGTH_LONG).show();
         }
