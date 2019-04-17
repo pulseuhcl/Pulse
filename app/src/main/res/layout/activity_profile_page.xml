@@ -27,29 +27,26 @@
 
     <!-- user icon -->
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/userIcon"
         android:layout_width="67dp"
         android:layout_height="61dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/user" />
+        app:srcCompat="@drawable/user"
+        tools:layout_editor_absoluteX="19dp"
+        tools:layout_editor_absoluteY="16dp" />
 
 
     <!-- Gear icon -->
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/gearIcon"
         android:layout_width="67dp"
         android:layout_height="61dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="28dp"
         android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintBottom_toTopOf="@+id/gearIcon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/gear" />
 
     <!-- Flicker text -->
@@ -68,8 +65,8 @@
         android:textSize="50sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-        app:layout_constraintEnd_toStartOf="@+id/imageView4"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        app:layout_constraintEnd_toStartOf="@+id/gearIcon"
+        app:layout_constraintStart_toEndOf="@+id/userIcon"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.625"
         tools:text="Flicker" />
@@ -255,7 +252,7 @@
 
     <!-- Initals input text -->
     <EditText
-        android:id="@+id/Initials_EditText"
+        android:id="@+id/initialsEditText"
         android:layout_width="178dp"
         android:layout_height="50dp"
         android:layout_marginStart="24dp"
@@ -284,7 +281,7 @@
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintBottom_toBottomOf="@+id/Initials_TextView"
-        app:layout_constraintEnd_toEndOf="@+id/Initials_EditText"
+        app:layout_constraintEnd_toEndOf="@+id/initialsEditText"
         app:layout_constraintStart_toStartOf="@+id/Initials_TextView" />
 
 
@@ -324,7 +321,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/PhoneNumToolbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/PhoneNum_TextView"
-        app:layout_constraintTop_toBottomOf="@+id/Initials_EditText" />
+        app:layout_constraintTop_toBottomOf="@+id/initialsEditText" />
     <!-- PhoneNum bar -->
     <android.support.v7.widget.Toolbar
         android:id="@+id/PhoneNumToolbar"

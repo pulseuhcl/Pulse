@@ -28,45 +28,16 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <!-- user icon -->
-    <ImageView
-        android:id="@+id/userIcon"
-        android:layout_width="67dp"
-        android:layout_height="61dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/flickerLogo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/user" />
 
 
     <!-- Gear icon -->
-    <ImageView
-        android:id="@+id/gearIcon"
-        android:layout_width="67dp"
-        android:layout_height="61dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/flickerLogo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/gear" />
 
     <!-- Flicker text -->
     <TextView
         android:id="@+id/Flicker_Title_Text"
         android:layout_width="191dp"
         android:layout_height="69dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:fontFamily="@font/viga"
         android:gravity="center_horizontal"
@@ -75,10 +46,9 @@
         android:textSize="50sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/flickerLogo"
-        app:layout_constraintEnd_toStartOf="@+id/gearIcon"
-        app:layout_constraintStart_toEndOf="@+id/userIcon"
         app:layout_constraintTop_toTopOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout_editor_absoluteX="110dp"
         tools:text="Flicker" />
     <!--       Main Nav bar End         -->
 

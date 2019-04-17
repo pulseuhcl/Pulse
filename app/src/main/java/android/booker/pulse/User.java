@@ -9,7 +9,8 @@ public class User implements Parcelable {
     private String firstName;
     private String lastName;
     private String initials;
-
+    private String phoneNumber;
+    private String pinNumber;
 
     public String getUserName(){
         return userName;
@@ -19,6 +20,7 @@ public class User implements Parcelable {
         return password;
     }
 
+    public String getPhoneNumber() {return phoneNumber; }
 
     public String getFirstName(){
         return firstName;
@@ -30,6 +32,8 @@ public class User implements Parcelable {
 
     public String getInitials() { return initials; }
 
+    public String getPinNumber() {return pinNumber; }
+
 
     public void setUserName(String userName) {
         this.userName = userName;
@@ -39,7 +43,8 @@ public class User implements Parcelable {
         this.password = password;
     }
 
-
+    public void setPhoneNumber(String phoneNumber) {this.phoneNumber = phoneNumber;
+    }
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
@@ -51,6 +56,8 @@ public class User implements Parcelable {
     public void setInitials(String initials) {
         this.initials = initials;
     }
+
+    public void setPinNumber(String pinNumber) {this.pinNumber = pinNumber; }
 
     @Override
     public int describeContents() {
@@ -64,6 +71,8 @@ public class User implements Parcelable {
         out.writeString(this.firstName);
         out.writeString(this.lastName);
         out.writeString(this.initials);
+        out.writeString(this.phoneNumber);
+        out.writeString(this.pinNumber);
     }
 
     public User() {
@@ -75,6 +84,8 @@ public class User implements Parcelable {
         this.firstName = in.readString();
         this.lastName = in.readString();
         this.initials = in.readString();
+        this.phoneNumber = in.readString();
+        this.pinNumber = in.readString();
 
     }
 

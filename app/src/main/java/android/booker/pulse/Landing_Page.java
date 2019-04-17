@@ -32,14 +32,7 @@ public class Landing_Page extends AppCompatActivity {
             userIcon = findViewById(R.id.userIcon);
             gearIcon = findViewById(R.id.gearIcon);
             pulseLogo = findViewById(R.id.flickerLogo);
-        Glide
-                .with(this)
-                .load(getDrawable(R.drawable.user))
-                .into(userIcon);
-        Glide
-                .with(this)
-                .load(getDrawable(R.drawable.gear))
-                .into(gearIcon);
+
         Glide
                 .with(this)
                 .load(getDrawable(R.drawable.pulse))

@@ -194,7 +194,7 @@
         app:layout_constraintHorizontal_bias="0.534"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.368" />
+        app:layout_constraintVertical_bias="0.178" />
 
     <!-- Fname bar -->
     <android.support.v7.widget.Toolbar
@@ -237,7 +237,7 @@
 
     <!-- Lname input text -->
     <EditText
-        android:id="@+id/Lname_EditText"
+        android:id="@+id/lastnameEditText"
         android:layout_width="178dp"
         android:layout_height="50dp"
         android:layout_marginStart="8dp"
@@ -299,7 +299,7 @@
 
     <!-- Initals input text -->
     <EditText
-        android:id="@+id/Initials_EditText"
+        android:id="@+id/initialsEditText"
         android:layout_width="178dp"
         android:layout_height="52dp"
         android:layout_marginStart="8dp"
@@ -493,8 +493,7 @@
         android:id="@+id/PasswordConfirm_EditText2"
         android:layout_width="178dp"
         android:layout_height="50dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="44dp"
         android:background="@android:color/darker_gray"
         android:backgroundTint="@color/transparent"
         android:ems="10"
