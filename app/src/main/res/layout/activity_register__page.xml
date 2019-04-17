@@ -14,42 +14,51 @@
         android:id="@+id/toolbar"
         android:layout_width="415dp"
         android:layout_height="92dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:background="@color/DarkGray"
         android:gravity="center_horizontal"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <!-- user icon -->
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/userIcon"
         android:layout_width="67dp"
         android:layout_height="61dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
-        app:layout_constraintStart_toStartOf="parent"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.024"
+        app:layout_constraintStart_toStartOf="@+id/toolbar"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.533"
         app:srcCompat="@drawable/user" />
 
 
     <!-- Gear icon -->
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/gearIcon"
         android:layout_width="67dp"
         android:layout_height="61dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar"
+        app:layout_constraintHorizontal_bias="0.963"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.012"
         app:srcCompat="@drawable/gear" />
 
     <!-- Flicker text -->
@@ -58,7 +67,6 @@
         android:layout_width="191dp"
         android:layout_height="69dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:fontFamily="@font/viga"
@@ -67,41 +75,46 @@
         android:textColor="@color/DustyGreen"
         android:textSize="50sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-        app:layout_constraintEnd_toStartOf="@+id/imageView4"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.625"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.012"
         tools:text="Flicker" />
     <!--       Main Nav bar End         -->
 
 
-
-
     <!-- user text -->
     <TextView
-        android:id="@+id/Username_TextView"
+        android:id="@+id/usernameTextView"
         android:layout_width="180dp"
         android:layout_height="50dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:fontFamily="sans-serif-medium"
         android:gravity="center|left"
         android:text="Username:"
         android:textColor="@color/Teal"
         android:textScaleX=".85"
         android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.037"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.478" />
 
     <!-- User input text -->
     <EditText
-        android:id="@+id/UserName_EditText"
+        android:id="@+id/usernameEditText"
         android:layout_width="178dp"
         android:layout_height="50dp"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="8dp"
         android:background="@color/transparent"
         android:backgroundTint="@color/DarkGray"
         android:drawableBottom="@color/Teal"
@@ -110,51 +123,64 @@
         android:selectAllOnFocus="false"
         android:singleLine="true"
         android:textAlignment="viewStart"
-        app:layout_constraintBottom_toBottomOf="@+id/UsernameToolBar"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/Username_TextView"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+        app:layout_constraintHorizontal_bias="0.588"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.481" />
 
     <!--User Bar -->
     <android.support.v7.widget.Toolbar
-        android:id="@+id/UsernameToolBar"
-        android:layout_width="375dp"
+        android:id="@+id/lastnameToolbar"
+        android:layout_width="215dp"
         android:layout_height="2dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="144dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:background="@color/Teal"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
-        app:layout_constraintBottom_toBottomOf="@+id/Username_TextView"
-        app:layout_constraintEnd_toEndOf="@+id/UserName_EditText"
-        app:layout_constraintStart_toStartOf="@+id/Username_TextView" />
-
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.638"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.012" />
 
 
     <!-- Fname text -->
     <TextView
-        android:id="@+id/Fname_TextView"
+        android:id="@+id/firstnameTextView"
         android:layout_width="180dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:fontFamily="sans-serif-medium"
         android:gravity="center|left"
         android:text="First Name:"
         android:textColor="@color/Teal"
         android:textScaleX=".85"
         android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Username_TextView" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.192" />
 
     <!-- Fname input text -->
     <EditText
-        android:id="@+id/FName_EditText"
+        android:id="@+id/firstnameEditText"
         android:layout_width="178dp"
         android:layout_height="50dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:background="@color/transparent"
         android:backgroundTint="@color/DarkGray"
         android:drawableBottom="@color/Teal"
@@ -163,25 +189,31 @@
         android:selectAllOnFocus="false"
         android:singleLine="true"
         android:textAlignment="viewStart"
-        app:layout_constraintBottom_toBottomOf="@+id/FnameToolbar"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/Fname_TextView"
-        app:layout_constraintTop_toBottomOf="@+id/UserName_EditText" />
+        app:layout_constraintHorizontal_bias="0.534"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.368" />
 
     <!-- Fname bar -->
     <android.support.v7.widget.Toolbar
-        android:id="@+id/FnameToolbar"
-        android:layout_width="375dp"
+        android:id="@+id/firstnameToolBar"
+        android:layout_width="215dp"
         android:layout_height="2dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:background="@color/Teal"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
-        app:layout_constraintBottom_toBottomOf="@+id/Fname_TextView"
-        app:layout_constraintEnd_toEndOf="@+id/FName_EditText"
-        app:layout_constraintStart_toStartOf="@+id/Fname_TextView" />
-
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.644"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.005" />
 
 
     <!-- Lname text -->
@@ -189,25 +221,29 @@
         android:id="@+id/Lname_TextView"
         android:layout_width="180dp"
         android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="212dp"
+        android:layout_marginBottom="8dp"
         android:fontFamily="sans-serif-medium"
         android:gravity="center|left"
         android:text="Last Name:"
         android:textColor="@color/Teal"
         android:textScaleX=".85"
         android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Fname_TextView" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.293" />
 
     <!-- Lname input text -->
     <EditText
         android:id="@+id/Lname_EditText"
         android:layout_width="178dp"
         android:layout_height="50dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="8dp"
         android:background="@color/transparent"
         android:backgroundTint="@color/DarkGray"
         android:drawableBottom="@color/Teal"
@@ -216,51 +252,60 @@
         android:selectAllOnFocus="false"
         android:singleLine="true"
         android:textAlignment="viewStart"
-        app:layout_constraintBottom_toBottomOf="@+id/LnameToolbar"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/Lname_TextView"
-        app:layout_constraintTop_toBottomOf="@+id/FName_EditText"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintHorizontal_bias="0.588"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.267" />
     <!-- Lname bar -->
     <android.support.v7.widget.Toolbar
-        android:id="@+id/LnameToolbar"
-        android:layout_width="375dp"
+        android:id="@+id/initialsToolBar"
+        android:layout_width="215dp"
         android:layout_height="2dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="208dp"
+        android:layout_marginEnd="8dp"
         android:background="@color/Teal"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
-        app:layout_constraintBottom_toBottomOf="@+id/Lname_TextView"
-        app:layout_constraintEnd_toEndOf="@+id/Lname_EditText"
-        app:layout_constraintStart_toStartOf="@+id/Lname_TextView" />
-
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.638"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
 
     <!-- Initials text -->
     <TextView
         android:id="@+id/Initials_TextView"
-        android:layout_width="180dp"
+        android:layout_width="140dp"
         android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:fontFamily="sans-serif-medium"
         android:gravity="center|left"
         android:text="Initials:"
         android:textColor="@color/Teal"
         android:textScaleX=".85"
         android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.043"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Lname_TextView" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.384" />
 
     <!-- Initals input text -->
     <EditText
         android:id="@+id/Initials_EditText"
         android:layout_width="178dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="8dp"
         android:background="@color/transparent"
         android:backgroundTint="@color/DarkGray"
         android:drawableBottom="@color/Teal"
@@ -269,24 +314,30 @@
         android:selectAllOnFocus="false"
         android:singleLine="true"
         android:textAlignment="viewStart"
-        app:layout_constraintBottom_toTopOf="@+id/InitialsToolbar"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/Initials_TextView"
-        app:layout_constraintTop_toBottomOf="@+id/Lname_EditText" />
+        app:layout_constraintHorizontal_bias="0.588"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.369" />
     <!-- Initials bar -->
     <android.support.v7.widget.Toolbar
-        android:id="@+id/InitialsToolbar"
-        android:layout_width="375dp"
+        android:id="@+id/usernameToolBar"
+        android:layout_width="215dp"
         android:layout_height="2dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="272dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:background="@color/Teal"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
-        app:layout_constraintBottom_toBottomOf="@+id/Initials_TextView"
-        app:layout_constraintEnd_toEndOf="@+id/Initials_EditText"
-        app:layout_constraintStart_toStartOf="@+id/Initials_TextView" />
-
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.644"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.0" />
 
 
     <!-- PhoneNum text -->
@@ -295,24 +346,31 @@
         android:layout_width="180dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:fontFamily="sans-serif-medium"
         android:gravity="center|left"
-        android:text="Phone number:"
+        android:text="Phone:"
         android:textColor="@color/Teal"
         android:textScaleX=".85"
         android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Initials_TextView" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.581" />
 
     <!-- PhoneNum input text -->
     <EditText
         android:id="@+id/PhoneNum_EditText"
         android:layout_width="178dp"
         android:layout_height="50dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:background="@color/transparent"
         android:backgroundTint="@color/DarkGray"
         android:drawableBottom="@color/Teal"
@@ -321,24 +379,30 @@
         android:selectAllOnFocus="false"
         android:singleLine="true"
         android:textAlignment="viewStart"
-        app:layout_constraintBottom_toBottomOf="@+id/PhoneNumToolbar"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/PhoneNum_TextView"
-        app:layout_constraintTop_toBottomOf="@+id/Initials_EditText" />
+        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.571" />
     <!-- PhoneNum bar -->
     <android.support.v7.widget.Toolbar
         android:id="@+id/PhoneNumToolbar"
-        android:layout_width="375dp"
+        android:layout_width="215dp"
         android:layout_height="2dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="344dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:background="@color/Teal"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
-        app:layout_constraintBottom_toBottomOf="@+id/PhoneNum_TextView"
-        app:layout_constraintEnd_toEndOf="@+id/PhoneNum_EditText"
-        app:layout_constraintStart_toStartOf="@id/PhoneNum_TextView" />
-
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.638"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.0" />
 
 
     <!-- Password text -->
@@ -347,46 +411,59 @@
         android:layout_width="180dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:fontFamily="sans-serif-medium"
         android:gravity="center|left"
         android:text="Password:"
         android:textColor="@color/Teal"
         android:textScaleX=".85"
         android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/PhoneNum_TextView" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.679" />
 
     <!-- Password input text -->
     <EditText
         android:id="@+id/Password_EditText2"
         android:layout_width="178dp"
         android:layout_height="50dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:background="@android:color/darker_gray"
         android:backgroundTint="@color/transparent"
         android:ems="10"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="@+id/PasswordTooblar"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/Password_TextView2"
-        app:layout_constraintTop_toBottomOf="@+id/PhoneNum_EditText" />
+        app:layout_constraintHorizontal_bias="0.534"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.679" />
     <!-- Password bar -->
     <android.support.v7.widget.Toolbar
-        android:id="@+id/PasswordTooblar"
-        android:layout_width="375dp"
+        android:id="@+id/PasswordToolbar"
+        android:layout_width="215dp"
         android:layout_height="2dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="416dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:background="@color/Teal"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
-        app:layout_constraintBottom_toBottomOf="@+id/Password_TextView2"
-        app:layout_constraintEnd_toEndOf="@+id/Password_EditText2"
-        app:layout_constraintStart_toStartOf="@id/Password_TextView2" />
-
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.638"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.0" />
 
 
     <!-- Password confirm text -->
@@ -395,47 +472,50 @@
         android:layout_width="180dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:fontFamily="sans-serif-medium"
         android:gravity="center|left"
         android:text="Confirm Password:"
         android:textColor="@color/Teal"
         android:textScaleX=".85"
         android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Password_TextView2" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.775" />
 
     <!-- Password confirm input text -->
     <EditText
         android:id="@+id/PasswordConfirm_EditText2"
         android:layout_width="178dp"
         android:layout_height="50dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="32dp"
         android:layout_marginBottom="24dp"
         android:background="@android:color/darker_gray"
         android:backgroundTint="@color/transparent"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="@+id/PasswordConfirmTooblar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/PasswordConfirm_TextView2"
-        app:layout_constraintTop_toBottomOf="@+id/Password_EditText2"
-        app:layout_constraintVertical_bias="0.02" />
+        app:layout_constraintEnd_toEndOf="parent" />
     <!-- Password bar -->
     <android.support.v7.widget.Toolbar
         android:id="@+id/PasswordConfirmTooblar"
-        android:layout_width="375dp"
+        android:layout_width="215dp"
         android:layout_height="2dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="48dp"
         android:background="@color/Teal"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
-        app:layout_constraintBottom_toBottomOf="@+id/PasswordConfirm_TextView2"
-        app:layout_constraintEnd_toEndOf="@id/PasswordConfirm_EditText2"
-        app:layout_constraintStart_toStartOf="@id/PasswordConfirm_TextView2" />
+        app:layout_constraintBottom_toTopOf="@+id/Login_Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
     <Button
@@ -444,9 +524,8 @@
         android:layout_width="163dp"
         android:layout_height="76dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="32dp"
         android:background="@color/Teal"
         android:backgroundTint="@color/shadow_black"
         android:backgroundTintMode="screen"
@@ -458,9 +537,7 @@
         android:typeface="monospace"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/PasswordConfirmTooblar" />
-
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </android.support.constraint.ConstraintLayout>
