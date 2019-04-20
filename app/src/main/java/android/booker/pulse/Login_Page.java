@@ -21,16 +21,13 @@ public class Login_Page extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_page);
-        // The widget typed variables declared above are assigned to their respective widgets in the view
         loginButton = findViewById(R.id.Login_Button);
         usernameInput = findViewById(R.id.usernameEditText);
         passwordInput = findViewById(R.id.passwordEditText);
         userIcon = findViewById(R.id.userIcon);
         gearIcon = findViewById(R.id.gearIcon);
-        // the event listener for the login button is assigned
         loginButton.setOnClickListener(LoginButtonListener);
 
-        // images are loaded into their widgets using Glide image loading engine
         Glide
                 .with(this)
                 .load(getDrawable(R.drawable.user))
@@ -42,7 +39,7 @@ public class Login_Page extends AppCompatActivity {
 
     }
 
-    // the login button listener is declared here
+    // Listeners go here
     private View.OnClickListener LoginButtonListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -50,13 +47,10 @@ public class Login_Page extends AppCompatActivity {
         }
     };
 
-    // this function takes user input from the text boxes and assigned it to the username and password variables
+    // Functions go below this line.
     public void LoginButtonClicked() {
-        // the username and password string variables are passed as parameters to the asynchronous
-        // task that handles the login
         username = usernameInput.getText().toString();
         password = passwordInput.getText().toString();
-
         new AsyncLogin(Login_Page.this).execute(username, password);
     }
 }

@@ -32,14 +32,13 @@ public class AsyncLogin extends AsyncTask<String, String, String> {
     @Override
     protected void onPreExecute(){
         super.onPreExecute();
-        // optional progress bar or something or whatever needs to happen before doInBackground
+        // optional progress bar would go here
     }
 
     @Override
-    // doInBackground accepts string parameters from the AsyncLogin.execute() method in Login_Page
     protected String doInBackground(String... params){
         try{
-            url = new URL("http://6698522f.ngrok.io/pulse_api/login.php");
+            url = new URL("http://5acf6fcf.ngrok.io/pulse_api/login.php");
         }catch(MalformedURLException e){
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -52,51 +51,32 @@ public class AsyncLogin extends AsyncTask<String, String, String> {
             conn.setConnectTimeout(10000);
             conn.setRequestMethod("POST");
 
-            // These instance variables are set to true to signify that we are both sending and
-            // receiving data.
+            // setDoInput and set DoOutput method depict handling of both send/receive
             conn.setDoInput(true);
             conn.setDoOutput(true);
 
-            // Uri.Builder helps to create a Uniform Resource Identifier
-            // this string of characters will identify the specific resource to be
-            // accessed from the server
+            // Append parameters to URL
             Uri.Builder builder = new Uri.Builder()
-            // The parameters that are passed into the AsyncLogin object's execute() method which is
-            // called as the object is instantiated on line 59 of Login_Page
                     .appendQueryParameter("username", params[0])
                     .appendQueryParameter("password", params[1]);
-            //the completed URI is formed and placed in the query variable
             String query = builder.build().getEncodedQuery();
 
-            // The same arguments that were passed into AsyncLogin.execute() from Login_Page
-            // are assigned to an instance of the User object(created on line 27).
-            // The object from this point forward will be passed from activity to activity to
-            // maintain its state.
+            // set the params to the User object
             currentUser.setUserName(params[0]);
             currentUser.setPassword(params[1]);
 
-            // Get the output stream and associate it with the url variable declared above
-            OutputStream outputStream = conn.getOutputStream();
-            // creates a BufferedWriter object and passes an OutputStreamWriter object as the
-            // argument. We are using the default buffer size.
+            // Open connection for sending data
+            OutputStream os = conn.getOutputStream();
             BufferedWriter writer = new BufferedWriter(
-            // The OutputStreamWriter object takes the outputStream variable and and encodes it
-            // into bytes using UTF-8 character set
-                    new OutputStreamWriter(outputStream, "UTF-8"));
-            // writer.write() writes text to the output stream.
+                    new OutputStreamWriter(os, "UTF-8"));
             writer.write(query);
-            // writer.flush() flushes the characters from the output stream buffer
-            // to the stream that is sent to the server
             writer.flush();
-            // writer.close() flushes the output stream
             writer.close();
-            // The output stream is closed and all resources associated with it are cleared.
-            outputStream.close();
-
+            os.close();
             conn.connect();
-        }catch(IOException e) {
+        }catch(IOException e1) {
             // TODO Auto-generated catch block
-            e.printStackTrace();
+            e1.printStackTrace();
             return "exception";
         }
         try{
@@ -122,9 +102,6 @@ public class AsyncLogin extends AsyncTask<String, String, String> {
                         currentUser.setPassword(object.getString("password"));
                         currentUser.setFirstName(object.getString("firstname"));
                         currentUser.setLastName(object.getString("lastname"));
-                        currentUser.setInitials(object.getString("initials"));
-                        currentUser.setInitials(object.getString("phoneNumber"));
-                        currentUser.setPinNumber(object.getString("pinNumber"));
                     }
                 }catch(JSONException e){
                     e.printStackTrace();
