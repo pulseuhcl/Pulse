@@ -86,7 +86,6 @@ public class User implements Parcelable {
         this.initials = in.readString();
         this.phoneNumber = in.readString();
         this.pinNumber = in.readString();
-
     }
 
     public static final Creator<User> CREATOR = new Creator<User>() {
@@ -100,4 +99,11 @@ public class User implements Parcelable {
             return new User[size];
         }
     };
+//
+//    public String generatePattern(){
+//        // take user pin number
+//        // convert to byte string or byte array
+//        // return this ^^ ^^
+//        //this.pinNumber
+//    }
 }

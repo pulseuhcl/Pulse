@@ -36,6 +36,7 @@ public class Login_Page extends AppCompatActivity {
                 .with(this)
                 .load(getDrawable(R.drawable.gear))
                 .into(gearIcon);
+
     }
 
     // Listeners go here

@@ -20,13 +20,13 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class AsyncLogin extends AsyncTask<String, String, String> {
-    private Login_Page login_page;
+public class AsyncRegister extends AsyncTask<String, String, String> {
+    private Register_Page register_page;
     HttpURLConnection conn;
     URL url = null;
     User currentUser = new User();
-    public AsyncLogin(Login_Page login_page){
-        this.login_page = login_page;
+    public AsyncRegister(Register_Page register_page){
+        this.register_page = register_page;
     }
 
     @Override
@@ -58,12 +58,22 @@ public class AsyncLogin extends AsyncTask<String, String, String> {
             // Append parameters to URL
             Uri.Builder builder = new Uri.Builder()
                     .appendQueryParameter("username", params[0])
-                    .appendQueryParameter("password", params[1]);
+                    .appendQueryParameter("password", params[1])
+                    .appendQueryParameter("firstname", params[2])
+                    .appendQueryParameter("lastname", params[3])
+                    .appendQueryParameter("initials", params[4])
+                    .appendQueryParameter("phoneNumber", params[5])
+                    .appendQueryParameter("pinNumber", params[6]);
             String query = builder.build().getEncodedQuery();
 
-            // set the params to the User object
+            // set the params to the User object for later verification
             currentUser.setUserName(params[0]);
             currentUser.setPassword(params[1]);
+            currentUser.setFirstName(params[2]);
+            currentUser.setLastName(params[3]);
+            currentUser.setInitials(params[4]);
+            currentUser.setPhoneNumber(params[5]);
+            currentUser.setPinNumber(params[6]);
 
             // Open connection for sending data
             OutputStream os = conn.getOutputStream();
@@ -102,6 +112,9 @@ public class AsyncLogin extends AsyncTask<String, String, String> {
                         currentUser.setPassword(object.getString("password"));
                         currentUser.setFirstName(object.getString("firstname"));
                         currentUser.setLastName(object.getString("lastname"));
+                        currentUser.setInitials(object.getString("initials"));
+                        currentUser.setPhoneNumber(object.getString("phoneNumber"));
+                        currentUser.setPinNumber(object.getString("pinNumber"));
                     }
                 }catch(JSONException e){
                     e.printStackTrace();
@@ -124,19 +137,19 @@ public class AsyncLogin extends AsyncTask<String, String, String> {
         // this method will be running on a UI thread
 
         if(result.contains(currentUser.getPassword())){
-            Toast.makeText(login_page, result, Toast.LENGTH_LONG).show();
+            Toast.makeText(register_page, result, Toast.LENGTH_LONG).show();
             // give a brief wait so the user can see the login success Toast
-            Intent intent = new Intent(login_page, User_Logged_In.class);
+            Intent intent = new Intent(register_page, User_Logged_In.class);
             // this passes the serialized user object to the next activity for further use
 
             intent.putExtra("currentUser", currentUser);
-            login_page.startActivity(intent);
+            register_page.startActivity(intent);
         }else if (!result.contains(currentUser.getPassword())) {
             // If username and password does not match display the error
-            Toast.makeText(login_page, "Login error!", Toast.LENGTH_LONG).show();
+            Toast.makeText(register_page, "Login error!", Toast.LENGTH_LONG).show();
         }
         else if (result.equalsIgnoreCase("exception") || result.equalsIgnoreCase("unsuccessful")){
-            Toast.makeText(login_page, "Error. Something went wrong!", Toast.LENGTH_LONG).show();
+            Toast.makeText(register_page, "Error. Something went wrong!", Toast.LENGTH_LONG).show();
         }
     }
 }
