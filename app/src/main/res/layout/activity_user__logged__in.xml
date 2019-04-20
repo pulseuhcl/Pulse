@@ -6,12 +6,13 @@
     android:layout_height="match_parent"
     android:background="@android:color/black"
     tools:context=".User_Logged_In">
+
     <!--     Main Nav bar Begin       -->
     <!-- bar -->
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="415dp"
-        android:layout_height="92dp"
+        android:layout_height="75dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:background="@color/DarkGray"
@@ -25,13 +26,11 @@
 
     <!-- user icon -->
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/userIcon"
         android:layout_width="67dp"
         android:layout_height="61dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/user" />
@@ -39,15 +38,16 @@
 
     <!-- Gear icon -->
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/gearIcon"
         android:layout_width="67dp"
         android:layout_height="61dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="28dp"
         android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintBottom_toTopOf="@+id/gearIcon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/gear" />
 
     <!-- Flicker text -->
@@ -66,126 +66,136 @@
         android:textSize="50sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-        app:layout_constraintEnd_toStartOf="@+id/imageView4"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        app:layout_constraintEnd_toStartOf="@+id/gearIcon"
+        app:layout_constraintStart_toEndOf="@+id/userIcon"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.625"
         tools:text="Flicker" />
+    <!--       Main Nav bar End         -->
+
 
     <!-- House Drop Start -->
-    <TextView
-        android:id="@+id/HousetextView"
-        android:layout_width="145dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="120dp"
-        android:fontFamily="sans-serif-medium"
-        android:gravity="center|left"
-        android:text="Beach House"
-        android:textColor="@color/Teal"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/Housespinner"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/Housespinner"
-        app:layout_constraintVertical_bias="0.65" />
+    <!--<TextView-->
+    <!--android:id="@+id/houseTextView"-->
+    <!--android:layout_width="145dp"-->
+    <!--android:layout_height="32dp"-->
+    <!--android:layout_marginStart="120dp"-->
+    <!--android:fontFamily="sans-serif-medium"-->
+    <!--android:gravity="center|left"-->
+    <!--android:text="Beach House"-->
+    <!--android:textColor="@color/Teal"-->
+    <!--android:textSize="24sp"-->
+    <!--app:layout_constraintBottom_toBottomOf="@+id/Housespinner"-->
+    <!--app:layout_constraintStart_toStartOf="parent"-->
+    <!--app:layout_constraintTop_toTopOf="@+id/Housespinner"-->
+    <!--app:layout_constraintVertical_bias="0.65" />-->
 
-    <Spinner
-        android:id="@+id/Housespinner"
-        android:layout_width="22dp"
-        android:layout_height="12dp"
-        android:layout_marginEnd="116dp"
-        android:background="@drawable/dropdown_darkBlue"
-        android:spinnerMode="dropdown"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="105dp" />
-    <!-- House Drop End -->
+    <!--<Spinner-->
+    <!--android:id="@+id/Housespinner"-->
+    <!--android:layout_width="22dp"-->
+    <!--android:layout_height="12dp"-->
+    <!--android:layout_marginEnd="116dp"-->
+    <!--android:background="@drawable/dropdown_darkblue"-->
+    <!--android:spinnerMode="dropdown"-->
+    <!--app:layout_constraintEnd_toEndOf="parent"-->
+    <!--tools:layout_editor_absoluteY="105dp" />-->
+    <!--&lt;!&ndash; House Drop End &ndash;&gt;-->
 
 
-    <!-- Door Drop Start -->
-    <TextView
-        android:id="@+id/DoortextView"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="85dp"
-        android:fontFamily="sans-serif-medium"
-        android:gravity="top|left"
-        android:text="Front Door"
-        android:textColor="@color/BrightGreen"
-        android:textSize="40sp"
-        app:layout_constraintBottom_toBottomOf="@+id/Doorspinner"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/Doorspinner" />
+    <!--&lt;!&ndash; Door Drop Start &ndash;&gt;-->
+    <!--<TextView-->
+    <!--android:id="@+id/DoortextView"-->
+    <!--android:layout_width="200dp"-->
+    <!--android:layout_height="50dp"-->
+    <!--android:layout_marginStart="85dp"-->
+    <!--android:fontFamily="sans-serif-medium"-->
+    <!--android:gravity="top|left"-->
+    <!--android:text="Front Door"-->
+    <!--android:textColor="@color/BrightGreen"-->
+    <!--android:textSize="40sp"-->
+    <!--app:layout_constraintBottom_toBottomOf="@+id/Doorspinner"-->
+    <!--app:layout_constraintStart_toStartOf="parent"-->
+    <!--app:layout_constraintTop_toTopOf="@+id/Doorspinner" />-->
 
-    <Spinner
-        android:id="@+id/Doorspinner"
-        android:layout_width="40dp"
-        android:layout_height="20dp"
-        android:layout_marginEnd="84dp"
-        android:background="@drawable/dropdown_lightGreen"
-        android:spinnerMode="dropdown"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="139dp" />
+    <!--<Spinner-->
+    <!--android:id="@+id/Doorspinner"-->
+    <!--android:layout_width="40dp"-->
+    <!--android:layout_height="20dp"-->
+    <!--android:layout_marginEnd="84dp"-->
+    <!--android:background="@drawable/dropdown_lightgreen"-->
+    <!--android:spinnerMode="dropdown"-->
+    <!--app:layout_constraintEnd_toEndOf="parent"-->
+    <!--tools:layout_editor_absoluteY="139dp" />-->
     <!-- Door Drop End -->
 
-
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/sendCodeButton"
         android:layout_width="135dp"
         android:layout_height="101dp"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
+        android:layout_marginBottom="8dp"
         android:background="@android:color/black"
-        android:scaleType="cover"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/send"
-        tools:layout_editor_absoluteY="571dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.833"
+        app:srcCompat="@drawable/send" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/unlockButton"
         android:layout_width="254dp"
         android:layout_height="267dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="232dp"
         android:background="@android:color/black"
-        android:scaleType="cover"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.468"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.642"
         app:srcCompat="@drawable/lock" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="20dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:background="@color/transparent"
-        android:text="NEW DOOR"
-        android:textColor="@color/DustyGreen"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/DoortextView" />
+    <!--<Button-->
+    <!--android:id="@+id/button"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="20dp"-->
+    <!--android:layout_marginStart="8dp"-->
+    <!--android:layout_marginTop="8dp"-->
+    <!--android:layout_marginEnd="8dp"-->
+    <!--android:background="@color/transparent"-->
+    <!--android:text="NEW DOOR"-->
+    <!--android:textColor="@color/DustyGreen"-->
+    <!--app:layout_constraintEnd_toEndOf="parent"-->
+    <!--app:layout_constraintHorizontal_bias="0.498"-->
+    <!--app:layout_constraintStart_toStartOf="parent"-->
+    <!--app:layout_constraintTop_toBottomOf="@+id/DoortextView" />-->
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/unlockTextView"
         android:layout_width="248dp"
         android:layout_height="29dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="8dp"
         android:autoSizeTextType="uniform"
         android:fontFamily="sans-serif-medium"
         android:text="TAP KEY TO UNLOCK DOOR"
         android:textColor="@color/LightBlue"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton2" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.637" />
 
     <TextView
         android:id="@+id/textView3"
@@ -194,17 +204,21 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:autoSizeTextType="uniform"
         android:fontFamily="sans-serif-medium"
         android:text="SEND CODE TO A FRIEND"
         android:textAlignment="center"
         android:textColor="@color/DustyGreen"
         android:textColorLink="@color/DustyGreen"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.925" />
 
 
-    <!--       Main Nav bar End         -->
+
+
 
 </android.support.constraint.ConstraintLayout>
