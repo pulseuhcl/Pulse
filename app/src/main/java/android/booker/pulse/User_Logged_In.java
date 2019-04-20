@@ -32,7 +32,7 @@ public class User_Logged_In extends AppCompatActivity {
         profileButton = findViewById(R.id.profileButton);
         profileButton.setOnClickListener(profileButtonListener);
         //testing to see if the user object was passed successfully via intent
-        Toast.makeText(getApplicationContext(), "username is " + currentUser.getUserName(), Toast.LENGTH_LONG).show();
+        //Toast.makeText(getApplicationContext(), "username is " + currentUser.getUserName(), Toast.LENGTH_LONG).show();
 
         Glide
                 .with(this)

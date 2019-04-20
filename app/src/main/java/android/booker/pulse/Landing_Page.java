@@ -1,9 +1,6 @@
 package android.booker.pulse;
 
         import android.content.Intent;
-        import android.database.sqlite.SQLiteDatabase;
-        import android.os.Handler;
-        import android.support.constraint.ConstraintLayout;
         import android.support.v7.app.AppCompatActivity;
         import android.os.Bundle;
         import android.view.View;
@@ -11,8 +8,6 @@ package android.booker.pulse;
         import android.widget.ImageView;
 
         import com.bumptech.glide.Glide;
-
-        import java.io.BufferedReader;
 
 public class Landing_Page extends AppCompatActivity {
     private Button loginButton;

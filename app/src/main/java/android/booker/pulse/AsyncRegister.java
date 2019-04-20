@@ -38,14 +38,16 @@ public class AsyncRegister extends AsyncTask<String, String, String> {
     @Override
     protected String doInBackground(String... params){
         try{
-            url = new URL("http://5acf6fcf.ngrok.io/pulse_api/login.php");
+            // sets url to point to the location of the register.php file on the web server
+            url = new URL("https://1d7ab340.ngrok.io/pulse_api/register.php");
         }catch(MalformedURLException e){
-            // TODO Auto-generated catch block
+            // if the url is not typed in a way that conforms to standards, this exception is thrown
+            // and the stacktrace is printed to the user
             e.printStackTrace();
             return "exception";
         }
         try{
-            // Setup HttpUrlConnection class to send and receive data from php and mysql
+            // url.openConnection() opens the
             conn = (HttpURLConnection) url.openConnection();
             conn.setReadTimeout(15000);
             conn.setConnectTimeout(10000);
