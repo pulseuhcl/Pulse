@@ -11,10 +11,8 @@
     <!-- bar -->
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
-        android:layout_width="415dp"
-        android:layout_height="92dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_width="437dp"
+        android:layout_height="75dp"
         android:layout_marginBottom="8dp"
         android:background="@color/DarkGray"
         android:gravity="center_horizontal"
@@ -22,7 +20,6 @@
         android:theme="?attr/actionBarTheme"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
@@ -35,9 +32,11 @@
     <!-- Flicker text -->
     <TextView
         android:id="@+id/Flicker_Title_Text"
-        android:layout_width="191dp"
+        android:layout_width="match_parent"
         android:layout_height="69dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:fontFamily="@font/viga"
         android:gravity="center_horizontal"
@@ -45,10 +44,12 @@
         android:textColor="@color/DustyGreen"
         android:textSize="50sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/flickerLogo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="1.0"
-        tools:layout_editor_absoluteX="110dp"
+        app:layout_constraintVertical_bias="0.0"
         tools:text="Flicker" />
     <!--       Main Nav bar End         -->
 
@@ -60,7 +61,7 @@
         android:layout_height="76dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="116dp"
+        android:layout_marginBottom="124dp"
         android:background="@color/Teal"
         android:backgroundTint="@color/shadow_black"
         android:backgroundTintMode="screen"
@@ -72,17 +73,15 @@
         android:typeface="monospace"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/flickerLogo"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/registerButton"
         android:layout_width="216dp"
         android:layout_height="90dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="328dp"
         android:background="@color/transparent"
         android:text="Register"
         android:textColor="@color/Teal"
@@ -92,15 +91,19 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginButton"
-        app:layout_constraintVertical_bias="0.025" />
+        app:layout_constraintVertical_bias="0.466" />
 
     <ImageView
         android:id="@+id/flickerLogo"
-        android:layout_width="272dp"
-        android:layout_height="423dp"
+        android:layout_width="275sp"
+        android:layout_height="350dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:contentDescription="TODO"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@+id/loginButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"

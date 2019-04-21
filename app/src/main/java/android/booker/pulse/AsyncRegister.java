@@ -141,10 +141,9 @@ public class AsyncRegister extends AsyncTask<String, String, String> {
         if(result.contains(currentUser.getPassword())){
             Toast.makeText(register_page, result, Toast.LENGTH_LONG).show();
             // give a brief wait so the user can see the login success Toast
-            Intent intent = new Intent(register_page, User_Logged_In.class);
-            // this passes the serialized user object to the next activity for further use
+            Intent intent = new Intent(register_page, Login_Page.class);
 
-            intent.putExtra("currentUser", currentUser);
+            //intent.putExtra("currentUser", currentUser);
             register_page.startActivity(intent);
         }else if (!result.contains(currentUser.getPassword())) {
             // If username and password does not match display the error

@@ -14,25 +14,25 @@ package android.booker.pulse;
 
 public class User_Logged_In extends AppCompatActivity {
     User currentUser = new User();
-    private ImageView gearIcon;
-    private ImageView userIcon;
+    private ImageButton gearIcon;
+    private ImageButton userIcon;
     private ImageButton unlockButton;
     private ImageButton sendCodeButton;
-    private Button profileButton;
+    private ImageButton profileButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user__logged__in);
         currentUser = getIntent().getExtras().getParcelable("currentUser");
-        gearIcon = findViewById(R.id.gearIcon);
-        userIcon = findViewById(R.id.userIcon);
+        gearIcon = findViewById(R.id.GearButton);
+        userIcon = findViewById(R.id.UserButton);
         unlockButton = findViewById(R.id.unlockButton);
         sendCodeButton = findViewById(R.id.sendCodeButton);
-        profileButton = findViewById(R.id.profileButton);
+        profileButton = findViewById(R.id.UserButton);
         profileButton.setOnClickListener(profileButtonListener);
         //testing to see if the user object was passed successfully via intent
-        //Toast.makeText(getApplicationContext(), "username is " + currentUser.getUserName(), Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), "username is " + currentUser.getUserName(), Toast.LENGTH_LONG).show();
 
         Glide
                 .with(this)

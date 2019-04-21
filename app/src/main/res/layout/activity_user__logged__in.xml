@@ -6,84 +6,52 @@
     android:layout_height="match_parent"
     android:background="@android:color/black"
     tools:context=".User_Logged_In">
+
     <!--     Main Nav bar Begin       -->
     <!-- bar -->
-    <Button
-        android:id="@+id/profileButton"
-        android:layout_width="114dp"
-        android:layout_height="90dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="300dp"
-        android:layout_marginBottom="640dp"
-        android:alpha="1"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/settingsButton"
-        android:layout_width="114dp"
-        android:layout_height="90dp"
-        android:layout_marginBottom="636dp"
-        android:alpha="0"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="415dp"
-        android:layout_height="92dp"
+        android:layout_height="75dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
         android:background="@color/DarkGray"
         android:gravity="center_horizontal"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <!-- user icon -->
-    <ImageView
-        android:id="@+id/userIcon"
+    <ImageButton
+        android:id="@+id/UserButton"
         android:layout_width="67dp"
-        android:layout_height="61dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.015"
-        app:layout_constraintStart_toStartOf="@+id/toolbar"
+        android:layout_height="67dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="3dp"
+        android:background="@color/transparent"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.012"
         app:srcCompat="@drawable/user" />
 
 
+
     <!-- Gear icon -->
-    <ImageView
-        android:id="@+id/gearIcon"
+    <ImageButton
+        android:id="@+id/GearButton"
         android:layout_width="67dp"
-        android:layout_height="61dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="67dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="28dp"
+        android:background="@color/transparent"
+        android:scaleType="fitCenter"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/gear" />
+
 
     <!-- Flicker text -->
     <TextView
@@ -100,12 +68,13 @@
         android:textColor="@color/DustyGreen"
         android:textSize="50sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintEnd_toStartOf="@+id/GearButton"
+        app:layout_constraintStart_toEndOf="@+id/UserButton"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.012"
         tools:text="Flicker" />
+    <!--       Main Nav bar End         -->
+
 
     <!-- House Drop Start -->
     <!--<TextView-->
@@ -251,6 +220,7 @@
         app:layout_constraintVertical_bias="0.925" />
 
 
-    <!--       Main Nav bar End         -->
+
+
 
 </android.support.constraint.ConstraintLayout>

@@ -1,6 +1,9 @@
 package android.booker.pulse;
 
         import android.content.Intent;
+        import android.database.sqlite.SQLiteDatabase;
+        import android.os.Handler;
+        import android.support.constraint.ConstraintLayout;
         import android.support.v7.app.AppCompatActivity;
         import android.os.Bundle;
         import android.view.View;
@@ -9,12 +12,14 @@ package android.booker.pulse;
 
         import com.bumptech.glide.Glide;
 
+        import java.io.BufferedReader;
+
 public class Landing_Page extends AppCompatActivity {
     private Button loginButton;
     private Button registerButton;
     private ImageView userIcon;
     private ImageView gearIcon;
-    private ImageView pulseLogo;
+    private ImageView flickerLogo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,14 +29,14 @@ public class Landing_Page extends AppCompatActivity {
             registerButton = findViewById(R.id.registerButton);
             loginButton.setOnClickListener(LoginButtonListener);
             registerButton.setOnClickListener(RegisterButtonListener);
-            userIcon = findViewById(R.id.userIcon);
-            gearIcon = findViewById(R.id.gearIcon);
-            pulseLogo = findViewById(R.id.flickerLogo);
+            userIcon = findViewById(R.id.UserButton);
+            gearIcon = findViewById(R.id.GearButton);
+            flickerLogo = findViewById(R.id.flickerLogo);
 
         Glide
                 .with(this)
                 .load(getDrawable(R.drawable.pulse))
-                .into(pulseLogo);
+                .into(flickerLogo);
     }
 
     // Hide the navigation bar after a certain delay
