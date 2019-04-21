@@ -24,8 +24,8 @@ public class Login_Page extends AppCompatActivity {
         loginButton = findViewById(R.id.Login_Button);
         usernameInput = findViewById(R.id.usernameEditText);
         passwordInput = findViewById(R.id.passwordEditText);
-        userIcon = findViewById(R.id.userIcon);
-        gearIcon = findViewById(R.id.gearIcon);
+        userIcon = findViewById(R.id.UserButton);
+        gearIcon = findViewById(R.id.GearButton);
         loginButton.setOnClickListener(LoginButtonListener);
 
         Glide

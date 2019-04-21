@@ -29,8 +29,8 @@ public class Landing_Page extends AppCompatActivity {
             registerButton = findViewById(R.id.registerButton);
             loginButton.setOnClickListener(LoginButtonListener);
             registerButton.setOnClickListener(RegisterButtonListener);
-            userIcon = findViewById(R.id.userIcon);
-            gearIcon = findViewById(R.id.gearIcon);
+            userIcon = findViewById(R.id.UserButton);
+            gearIcon = findViewById(R.id.GearButton);
             flickerLogo = findViewById(R.id.flickerLogo);
 
         Glide

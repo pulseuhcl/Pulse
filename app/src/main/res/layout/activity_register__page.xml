@@ -26,31 +26,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- user icon -->
-    <ImageView
-        android:id="@+id/userIcon"
-        android:layout_width="67dp"
-        android:layout_height="61dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/user" />
-
-
-    <!-- Gear icon -->
-    <ImageView
-        android:id="@+id/gearIcon"
-        android:layout_width="67dp"
-        android:layout_height="61dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/gearIcon"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/gear" />
 
     <!-- Flicker text -->
     <TextView
@@ -68,26 +43,23 @@
         android:textSize="50sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-        app:layout_constraintEnd_toStartOf="@+id/gearIcon"
-        app:layout_constraintStart_toEndOf="@+id/userIcon"
+        app:layout_constraintEnd_toStartOf="@+id/GearButton"
+        app:layout_constraintStart_toEndOf="@+id/UserButton"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.625"
         tools:text="Flicker" />
     <!--       Main Nav bar End         -->
 
 
-
-
     <view
-        android:id="@+id/view"
+        android:id="@+id/Fnameview"
         class="android.support.v4.widget.DrawerLayout"
-        id="@+id/FnameView"
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
@@ -130,7 +102,6 @@
             android:inputType="textPersonName"
             android:selectAllOnFocus="false"
             android:singleLine="true"
-            android:textAlignment="viewStart"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
@@ -159,18 +130,17 @@
     </view>
 
     <view
-        android:id="@+id/view2"
+        android:id="@+id/Lnameview"
         class="android.support.v4.widget.DrawerLayout"
-        id="@+id/LnameView"
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view">
+        app:layout_constraintTop_toBottomOf="@id/Fnameview">
         <!-- Lname text -->
         <TextView
             android:id="@+id/Lname_TextView"
@@ -238,16 +208,15 @@
     <view
         android:id="@+id/InitialsView"
         class="android.support.v4.widget.DrawerLayout"
-        id="@+id/FnameView"
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view2">
+        app:layout_constraintTop_toBottomOf="@id/Lnameview">
 
         <!-- Initials text -->
         <TextView
@@ -289,7 +258,6 @@
             android:inputType="textPersonName"
             android:selectAllOnFocus="false"
             android:singleLine="true"
-            android:textAlignment="viewStart"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
@@ -298,7 +266,7 @@
             app:layout_constraintVertical_bias="0.386" />
         <!-- Initials bar -->
         <android.support.v7.widget.Toolbar
-            android:id="@+id/usernameToolBar"
+            android:id="@+id/InitialsToolBar"
             android:layout_width="100dp"
             android:layout_height="1dp"
             android:layout_marginStart="150dp"
@@ -320,14 +288,13 @@
     <view
         android:id="@+id/UserView"
         class="android.support.v4.widget.DrawerLayout"
-        id="@+id/FnameView"
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/InitialsView">
         <!-- user text -->
@@ -362,14 +329,13 @@
             android:layout_marginEnd="0dp"
             android:layout_marginBottom="8dp"
             android:background="@color/transparent"
-            android:gravity="center|left"
             android:backgroundTint="@color/DarkGray"
             android:drawableBottom="@color/Teal"
             android:ems="10"
+            android:gravity="center|left"
             android:inputType="textPersonName"
             android:selectAllOnFocus="false"
             android:singleLine="true"
-            android:textAlignment="viewStart"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
@@ -400,14 +366,13 @@
     <view
         android:id="@+id/PhoneView"
         class="android.support.v4.widget.DrawerLayout"
-        id="@+id/FnameView"
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/UserView">
         <!-- PhoneNum text -->
@@ -437,19 +402,18 @@
             android:id="@+id/PhoneNum_EditText"
             android:layout_width="178dp"
             android:layout_height="50dp"
+            android:layout_marginStart="150dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="0dp"
-            android:layout_marginStart="150dp"
             android:layout_marginBottom="8dp"
-            android:gravity="center|left"
             android:background="@color/transparent"
             android:backgroundTint="@color/DarkGray"
             android:drawableBottom="@color/Teal"
             android:ems="10"
+            android:gravity="center|left"
             android:inputType="textPersonName"
             android:selectAllOnFocus="false"
             android:singleLine="true"
-            android:textAlignment="viewStart"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.84"
@@ -479,14 +443,13 @@
     <view
         android:id="@+id/PasswordView"
         class="android.support.v4.widget.DrawerLayout"
-        id="@+id/FnameView"
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/PhoneView">
         <!-- Password text -->
@@ -554,14 +517,13 @@
     <view
         android:id="@+id/PasswordConfirmView"
         class="android.support.v4.widget.DrawerLayout"
-        id="@+id/FnameView"
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/PasswordView">
         <!-- Password confirm text -->
@@ -592,8 +554,8 @@
             android:layout_width="178dp"
             android:layout_height="50dp"
             android:layout_marginStart="150dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="0dp"
-            android:layout_marginTop = "8dp"
             android:layout_marginBottom="8dp"
             android:background="@android:color/darker_gray"
             android:backgroundTint="@color/transparent"

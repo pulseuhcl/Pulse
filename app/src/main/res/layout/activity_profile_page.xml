@@ -26,36 +26,40 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <!-- user icon -->
-    <ImageView
-        android:id="@+id/userIcon"
+    <ImageButton
+        android:id="@+id/UserButton"
         android:layout_width="67dp"
-        android:layout_height="61dp"
+        android:layout_height="67dp"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="3dp"
+        android:background="@color/transparent"
+        android:scaleType="fitCenter"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/user" />
 
 
+
     <!-- Gear icon -->
-    <ImageView
-        android:id="@+id/gearIcon"
+    <ImageButton
+        android:id="@+id/GearButton"
         android:layout_width="67dp"
-        android:layout_height="61dp"
-        android:layout_marginTop="8dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="3dp"
         android:layout_marginEnd="28dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/gearIcon"
+        android:background="@color/transparent"
+        android:scaleType="fitCenter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/gear" />
+
 
     <!-- Flicker text -->
     <TextView
         android:id="@+id/Flicker_Title_Text"
         android:layout_width="191dp"
         android:layout_height="69dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
@@ -66,22 +70,22 @@
         android:textSize="50sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-        app:layout_constraintEnd_toStartOf="@+id/gearIcon"
+        app:layout_constraintEnd_toStartOf="@+id/GearButton"
+        app:layout_constraintStart_toEndOf="@+id/UserButton"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.625"
         tools:text="Flicker" />
     <!--       Main Nav bar End         -->
 
     <view
-        android:id="@+id/view"
+        android:id="@+id/Fnameview"
         class="android.support.v4.widget.DrawerLayout"
-        id="@+id/FnameView"
-        android:layout_width="374dp"
+        android:layout_width="300dp"
         android:layout_height="60dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
@@ -92,7 +96,7 @@
             android:layout_height="50dp"
             android:layout_marginStart="0dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="200dp"
+            android:layout_marginEnd="150dp"
             android:layout_marginBottom="8dp"
             android:fontFamily="sans-serif-medium"
             android:gravity="center|left"
@@ -112,7 +116,7 @@
             android:id="@+id/firstnameEditText"
             android:layout_width="wrap_content"
             android:layout_height="50px"
-            android:layout_marginStart="200dp"
+            android:layout_marginStart="150dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="0dp"
             android:layout_marginBottom="8dp"
@@ -153,18 +157,17 @@
     </view>
 
     <view
-        android:id="@+id/view2"
+        android:id="@+id/Lnameview"
         class="android.support.v4.widget.DrawerLayout"
-        id="@+id/LnameView"
-        android:layout_width="374dp"
+        android:layout_width="300dp"
         android:layout_height="60dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.619"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view">
+        app:layout_constraintTop_toBottomOf="@id/Fnameview">
         <!-- Lname text -->
         <TextView
             android:id="@+id/Lname_TextView"
@@ -172,7 +175,7 @@
             android:layout_height="50dp"
             android:layout_marginStart="0dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="200dp"
+            android:layout_marginEnd="150dp"
             android:layout_marginBottom="8dp"
             android:fontFamily="sans-serif-medium"
             android:gravity="center|left"
@@ -190,7 +193,7 @@
             android:id="@+id/lastnameEditText"
             android:layout_width="178dp"
             android:layout_height="50dp"
-            android:layout_marginStart="200dp"
+            android:layout_marginStart="150dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="0dp"
             android:layout_marginBottom="8dp"
@@ -232,16 +235,15 @@
     <view
         android:id="@+id/InitialsView"
         class="android.support.v4.widget.DrawerLayout"
-        id="@+id/FnameView"
-        android:layout_width="374dp"
+        android:layout_width="300dp"
         android:layout_height="60dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.714"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view2">
+        app:layout_constraintTop_toBottomOf="@id/Lnameview">
 
         <!-- Initials text -->
         <TextView
@@ -250,7 +252,7 @@
             android:layout_height="50dp"
             android:layout_marginStart="0dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="200dp"
+            android:layout_marginEnd="150dp"
             android:layout_marginBottom="8dp"
             android:fontFamily="sans-serif-medium"
             android:foregroundGravity="center|left"
@@ -271,7 +273,7 @@
             android:id="@+id/initialsEditText"
             android:layout_width="178dp"
             android:layout_height="52dp"
-            android:layout_marginStart="200dp"
+            android:layout_marginStart="150dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="0dp"
             android:layout_marginBottom="8dp"
@@ -292,7 +294,7 @@
             app:layout_constraintVertical_bias="0.386" />
         <!-- Initials bar -->
         <android.support.v7.widget.Toolbar
-            android:id="@+id/usernameToolBar"
+            android:id="@+id/InitialsToolBar"
             android:layout_width="100dp"
             android:layout_height="1dp"
             android:layout_marginStart="150dp"
@@ -314,14 +316,13 @@
     <view
         android:id="@+id/UserView"
         class="android.support.v4.widget.DrawerLayout"
-        id="@+id/FnameView"
-        android:layout_width="374dp"
+        android:layout_width="300dp"
         android:layout_height="60dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.619"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/InitialsView">
         <!-- user text -->
@@ -331,7 +332,7 @@
             android:layout_height="50dp"
             android:layout_marginStart="0dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="200dp"
+            android:layout_marginEnd="150dp"
             android:layout_marginBottom="8dp"
             android:fontFamily="sans-serif-medium"
             android:gravity="center|left"
@@ -351,15 +352,15 @@
             android:id="@+id/usernameEditText"
             android:layout_width="178dp"
             android:layout_height="50dp"
-            android:layout_marginStart="200dp"
+            android:layout_marginStart="150dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="0dp"
             android:layout_marginBottom="8dp"
             android:background="@color/transparent"
-            android:gravity="center|left"
             android:backgroundTint="@color/DarkGray"
             android:drawableBottom="@color/Teal"
             android:ems="10"
+            android:gravity="center|left"
             android:inputType="textPersonName"
             android:selectAllOnFocus="false"
             android:singleLine="true"
@@ -394,14 +395,13 @@
     <view
         android:id="@+id/PhoneView"
         class="android.support.v4.widget.DrawerLayout"
-        id="@+id/FnameView"
-        android:layout_width="374dp"
+        android:layout_width="300dp"
         android:layout_height="60dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.619"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/UserView">
         <!-- PhoneNum text -->
@@ -411,7 +411,7 @@
             android:layout_height="50dp"
             android:layout_marginStart="0dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="200dp"
+            android:layout_marginEnd="150dp"
             android:layout_marginBottom="8dp"
             android:fontFamily="sans-serif-medium"
             android:gravity="center|left"
@@ -431,15 +431,15 @@
             android:id="@+id/PhoneNum_EditText"
             android:layout_width="178dp"
             android:layout_height="50dp"
+            android:layout_marginStart="150dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="0dp"
-            android:layout_marginStart="200dp"
             android:layout_marginBottom="8dp"
-            android:gravity="center|left"
             android:background="@color/transparent"
             android:backgroundTint="@color/DarkGray"
             android:drawableBottom="@color/Teal"
             android:ems="10"
+            android:gravity="center|left"
             android:inputType="textPersonName"
             android:selectAllOnFocus="false"
             android:singleLine="true"
@@ -473,14 +473,13 @@
     <view
         android:id="@+id/PasswordView"
         class="android.support.v4.widget.DrawerLayout"
-        id="@+id/FnameView"
-        android:layout_width="374dp"
+        android:layout_width="300dp"
         android:layout_height="60dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.619"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/PhoneView">
         <!-- Password text -->
@@ -490,7 +489,7 @@
             android:layout_height="50dp"
             android:layout_marginStart="0dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="200dp"
+            android:layout_marginEnd="150dp"
             android:layout_marginBottom="8dp"
             android:fontFamily="sans-serif-medium"
             android:gravity="center|left"
@@ -510,7 +509,7 @@
             android:id="@+id/Password_EditText2"
             android:layout_width="178dp"
             android:layout_height="50dp"
-            android:layout_marginStart="200dp"
+            android:layout_marginStart="150dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="0dp"
             android:layout_marginBottom="8dp"
@@ -548,14 +547,13 @@
     <view
         android:id="@+id/PasswordConfirmView"
         class="android.support.v4.widget.DrawerLayout"
-        id="@+id/FnameView"
-        android:layout_width="374dp"
+        android:layout_width="300dp"
         android:layout_height="60dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.619"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/PasswordView">
         <!-- Password confirm text -->
@@ -565,13 +563,13 @@
             android:layout_height="50dp"
             android:layout_marginStart="0dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="200dp"
+            android:layout_marginEnd="150dp"
             android:layout_marginBottom="8dp"
             android:fontFamily="sans-serif-medium"
             android:gravity="center|left"
             android:text="Confirm Password:"
             android:textColor="@color/Teal"
-            android:textScaleX=".75"
+            android:textScaleX=".55"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -585,9 +583,9 @@
             android:id="@+id/PasswordConfirm_EditText2"
             android:layout_width="178dp"
             android:layout_height="50dp"
-            android:layout_marginStart="200dp"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="0dp"
-            android:layout_marginTop = "8dp"
             android:layout_marginBottom="8dp"
             android:background="@android:color/darker_gray"
             android:backgroundTint="@color/transparent"
