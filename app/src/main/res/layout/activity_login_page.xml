@@ -241,7 +241,7 @@
     </view>
 
     <Button
-        android:id="@+id/Login_Button"
+        android:id="@+id/signupButton"
         android:layout_width="213dp"
         android:layout_height="105dp"
         android:layout_marginStart="8dp"

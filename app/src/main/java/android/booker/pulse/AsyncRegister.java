@@ -139,7 +139,7 @@ public class AsyncRegister extends AsyncTask<String, String, String> {
         if(result.contains(currentUser.getPassword())){
             Toast.makeText(register_page, result, Toast.LENGTH_LONG).show();
             // give a brief wait so the user can see the login success Toast
-            Intent intent = new Intent(register_page, Login_Page.class);
+            Intent intent = new Intent(register_page, Landing_Page.class);
 
             //intent.putExtra("currentUser", currentUser);
             register_page.startActivity(intent);

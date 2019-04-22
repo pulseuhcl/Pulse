@@ -502,7 +502,7 @@
 
         <!-- Password input text -->
         <EditText
-            android:id="@+id/Password_EditText2"
+            android:id="@+id/passwordEditText"
             android:layout_width="178dp"
             android:layout_height="50dp"
             android:layout_marginStart="150dp"
@@ -576,7 +576,7 @@
 
         <!-- Password confirm input text -->
         <EditText
-            android:id="@+id/PasswordConfirm_EditText2"
+            android:id="@+id/confirmPasswordEditText"
             android:layout_width="178dp"
             android:layout_height="50dp"
             android:layout_marginStart="150dp"
@@ -614,7 +614,7 @@
 
 
     <Button
-        android:id="@+id/Login_Button"
+        android:id="@+id/signupButton"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="163dp"
         android:layout_height="76dp"

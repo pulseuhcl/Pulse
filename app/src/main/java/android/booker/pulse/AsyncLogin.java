@@ -38,7 +38,7 @@ public class AsyncLogin extends AsyncTask<String, String, String> {
     @Override
     protected String doInBackground(String... params){
         try{
-            url = new URL("http://5acf6fcf.ngrok.io/pulse_api/login.php");
+            url = new URL("http://0a1b65bd.ngrok.io/pulse_api/login.php");
         }catch(MalformedURLException e){
             // TODO Auto-generated catch block
             e.printStackTrace();
