@@ -35,7 +35,7 @@ public class Profile_Page extends AppCompatActivity {
         initialsEditText.setText(currentUser.getInitials());
         phoneEditText.setText(currentUser.getPhoneNumber());
         userNameEditText.setText(currentUser.getUserName());
-        passwordEditText.setText(currentUser.getPassword());
+        //passwordEditText.setText(currentUser.getPassword());
         //passwordEditText.setText(currentUser.getPassword());
 
         Toast.makeText(this, currentUser.getFirstName(), Toast.LENGTH_SHORT).show();

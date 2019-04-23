@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/black"
-    tools:context=".Login_Page">
+    tools:context=".Register_Page">
+
 
     <!--     Main Nav bar Begin       -->
     <!-- bar -->
@@ -29,7 +30,7 @@
         android:id="@+id/UserButton"
         android:layout_width="67dp"
         android:layout_height="67dp"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="28dp"
         android:layout_marginTop="3dp"
         android:background="@color/transparent"
         android:scaleType="fitCenter"
@@ -43,7 +44,8 @@
         android:id="@+id/GearButton"
         android:layout_width="67dp"
         android:layout_height="67dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="28dp"
         android:background="@color/transparent"
         android:scaleType="fitCenter"
         app:layout_constraintEnd_toEndOf="parent"
@@ -67,68 +69,75 @@
         android:textSize="50sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-        app:layout_constraintEnd_toStartOf="@+id/toolbar"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/toolbar"
+        app:layout_constraintEnd_toStartOf="@+id/GearButton"
+        app:layout_constraintStart_toEndOf="@+id/UserButton"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Flicker" />
     <!--       Main Nav bar End         -->
 
 
     <view
-        android:id="@+id/PassView"
+        android:id="@+id/CurrentPinView"
         class="android.support.v4.widget.DrawerLayout"
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="128dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/usernameView">
-        <!-- Password text -->
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <!-- Current pin text -->
         <TextView
-            android:id="@+id/passwordTextView"
-            android:layout_width="163dp"
-            android:layout_height="60dp"
+            android:id="@+id/CurrentPinTextView"
+            android:layout_width="25px"
+            android:layout_height="50dp"
             android:layout_marginStart="0dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="150dp"
             android:layout_marginBottom="8dp"
             android:fontFamily="sans-serif-medium"
-            android:gravity="bottom|left"
-            android:text="@string/Password"
+            android:gravity="center|left"
+            android:text="Current Pin:"
             android:textColor="@color/Teal"
+            android:textScaleX=".85"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.441" />
+            app:layout_constraintVertical_bias="0.192" />
 
-        <!-- Password input text -->
+        <!-- Current pin input text -->
         <EditText
-            android:id="@+id/passwordEditText"
-            android:layout_width="218dp"
-            android:layout_height="57dp"
+            android:id="@+id/CurrentPinEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="50px"
             android:layout_marginStart="150dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="0dp"
             android:layout_marginBottom="8dp"
-            android:background="@android:color/darker_gray"
-            android:backgroundTint="@color/transparent"
+            android:background="@color/transparent"
+            android:backgroundTint="@color/DarkGray"
+            android:drawableBottom="@color/Teal"
             android:ems="10"
-            android:inputType="textPassword"
+            android:gravity="center|left"
+            android:inputType="textPersonName"
+            android:selectAllOnFocus="false"
+            android:singleLine="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.942"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/toolbar"
-            app:layout_constraintVertical_bias="0.46" />
-        <!-- Password bar -->
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.192" />
+
+        <!-- Current pin bar -->
         <android.support.v7.widget.Toolbar
-            android:id="@+id/PasswordToolBar"
+            android:id="@+id/CurrentPinToolBar"
             android:layout_width="100dp"
             android:layout_height="1dp"
             android:layout_marginStart="150dp"
@@ -140,49 +149,50 @@
             android:theme="?attr/actionBarTheme"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.933"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.343" />
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:layout_constraintVertical_bias="0.021" />
     </view>
 
     <view
-        android:id="@+id/usernameView"
+        android:id="@+id/NewPinview"
         class="android.support.v4.widget.DrawerLayout"
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar">
-        <!-- user text -->
+        app:layout_constraintTop_toBottomOf="@id/CurrentPinView">
+        <!-- New pin text -->
         <TextView
-            android:id="@+id/usernameTextView"
-            android:layout_width="163dp"
-            android:layout_height="58dp"
+            android:id="@+id/NewPinTextView"
+            android:layout_width="180dp"
+            android:layout_height="50dp"
             android:layout_marginStart="0dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="150dp"
             android:layout_marginBottom="8dp"
             android:fontFamily="sans-serif-medium"
-            android:gravity="bottom|left"
-            android:text="@string/Username"
+            android:gravity="center|left"
+            android:text="New Pin:"
             android:textColor="@color/Teal"
+            android:textScaleX=".85"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar"
-            app:layout_constraintVertical_bias="0.136" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.293" />
 
-        <!-- User input text -->
+        <!-- New pin input text -->
         <EditText
-            android:id="@+id/usernameEditText"
-            android:layout_width="218dp"
-            android:layout_height="59dp"
+            android:id="@+id/NewPinEditText"
+            android:layout_width="178dp"
+            android:layout_height="50dp"
             android:layout_marginStart="150dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="0dp"
@@ -197,31 +207,13 @@
             android:textAlignment="viewStart"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.942"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar"
-            app:layout_constraintVertical_bias="0.156" />
-        <!--User Bar -->
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.293" />
+        <!-- New pin bar -->
         <android.support.v7.widget.Toolbar
-            android:id="@+id/usernameToolBar"
-            android:layout_width="215dp"
-            android:layout_height="1dp"
-            android:layout_marginStart="150dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:background="@color/Teal"
-            android:minHeight="?attr/actionBarSize"
-            android:theme="?attr/actionBarTheme"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.905"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar"
-            app:layout_constraintVertical_bias="0.217" />
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/PasswordLoginToolBar"
+            android:id="@+id/NewPinToolBar"
             android:layout_width="100dp"
             android:layout_height="1dp"
             android:layout_marginStart="150dp"
@@ -239,27 +231,113 @@
             app:layout_constraintVertical_bias="0.343" />
     </view>
 
-    <Button
-        android:id="@+id/signupButton"
-        android:layout_width="213dp"
-        android:layout_height="105dp"
+
+    <view
+        android:id="@+id/ConfirmNewPinView"
+        class="android.support.v4.widget.DrawerLayout"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="96dp"
-        android:backgroundTint="@color/Teal"
-        android:text="@string/LoginButton"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NewPinview"
+        app:layout_constraintVertical_bias="0.0">
+
+        <!-- New Pin Confirm text -->
+        <TextView
+            android:id="@+id/ConfirmNewPinTextView"
+            android:layout_width="140dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="150dp"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="sans-serif-medium"
+            android:foregroundGravity="center|left"
+            android:gravity="center|left"
+            android:text="Confirm New Pin:"
+            android:textColor="@color/Teal"
+            android:textScaleX=".75"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.043"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.384" />
+
+        <!-- New Pin Confirm input text -->
+        <EditText
+            android:id="@+id/ConfirmNewPinEditText"
+            android:layout_width="178dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/transparent"
+            android:backgroundTint="@color/DarkGray"
+            android:drawableBottom="@color/Teal"
+            android:ems="10"
+            android:gravity="center|left"
+            android:inputType="textPersonName"
+            android:selectAllOnFocus="false"
+            android:singleLine="true"
+            android:textAlignment="viewStart"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.386" />
+        <!-- New Pin Confirm bar -->
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/ConfirmNewPinToolBar"
+            android:layout_width="100dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/Teal"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.966"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.996" />
+    </view>
+
+
+    <Button
+        android:id="@+id/Login_Button"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="163dp"
+        android:layout_height="76dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/Teal"
+        android:backgroundTint="@color/shadow_black"
+        android:backgroundTintMode="screen"
+        android:elevation="4dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Change Pin"
+        android:textAlignment="center"
         android:textSize="24sp"
+        android:typeface="monospace"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.919" />
-
-    <android.support.constraint.Group
-        android:id="@+id/group"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        app:layout_constraintTop_toBottomOf="@+id/ConfirmNewPinView" />
 
 
 </android.support.constraint.ConstraintLayout>
