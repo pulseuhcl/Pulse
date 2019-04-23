@@ -104,6 +104,7 @@ public class AsyncLogin extends AsyncTask<String, String, String> {
                         currentUser.setLastName(object.getString("lastname"));
                         currentUser.setPhoneNumber(object.getString("phoneNumber"));
                         currentUser.setInitials(object.getString("initials"));
+                        currentUser.setPinNumber(object.getString("pinNumber"));
                     }
                 }catch(JSONException e){
                     e.printStackTrace();

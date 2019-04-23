@@ -11,23 +11,25 @@ package android.booker.pulse;
 
 public class User_Logged_In extends AppCompatActivity {
     User currentUser = new User();
-    private ImageButton gearIcon;
+    private ImageButton settingsButton;
     private ImageButton unlockButton;
     private ImageButton sendCodeButton;
     private ImageButton profileButton;
     private User_Logged_In userLoggedIn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user__logged__in);
         currentUser = getIntent().getExtras().getParcelable("currentUser");
-        gearIcon = findViewById(R.id.GearButton);
+        settingsButton = findViewById(R.id.GearButton);
         unlockButton = findViewById(R.id.unlockButton);
         sendCodeButton = findViewById(R.id.sendCodeButton);
         profileButton = findViewById(R.id.UserButton);
         profileButton.setOnClickListener(profileButtonListener);
+        settingsButton.setOnClickListener(settingsPageListener);
         //testing to see if the user object was passed successfully via intent
-        Toast.makeText(getApplicationContext(), "username is " + currentUser.getUserName(), Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), "password " + currentUser.getPassword(), Toast.LENGTH_LONG).show();
 
         Glide
                 .with(this)
@@ -36,7 +38,7 @@ public class User_Logged_In extends AppCompatActivity {
         Glide
                 .with(this)
                 .load(getDrawable(R.drawable.gear))
-                .into(gearIcon);
+                .into(settingsButton);
         Glide
                 .with(this)
                 .load(getDrawable(R.drawable.pulse))
@@ -56,6 +58,19 @@ public class User_Logged_In extends AppCompatActivity {
 
     private void profileButtonClicked(){
         Intent intent = new Intent(getApplicationContext(), Profile_Page.class);
+        intent.putExtra("currentUser", currentUser);
+        startActivity(intent);
+    }
+
+    private View.OnClickListener settingsPageListener = new View.OnClickListener(){
+        @Override
+        public void onClick(View v){
+            settingsButtonClicked();
+        }
+    };
+
+    private void settingsButtonClicked(){
+        Intent intent = new Intent(getApplicationContext(), Settings_Page.class);
         intent.putExtra("currentUser", currentUser);
         startActivity(intent);
     }

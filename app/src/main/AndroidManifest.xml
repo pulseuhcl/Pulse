@@ -17,6 +17,7 @@
         <activity android:name=".Login_Page" />
         <activity android:name=".User_Logged_In" />
         <activity android:name=".Profile_Page" />
+        <activity android:name='.Settings_Page' />
         <activity android:name=".Landing_Page" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -113,7 +113,7 @@
 
         <!-- Current pin input text -->
         <EditText
-            android:id="@+id/CurrentPinEditText"
+            android:id="@+id/currentPinEditText"
             android:layout_width="wrap_content"
             android:layout_height="50px"
             android:layout_marginStart="150dp"
@@ -190,7 +190,7 @@
 
         <!-- New pin input text -->
         <EditText
-            android:id="@+id/NewPinEditText"
+            android:id="@+id/newPinEditText"
             android:layout_width="178dp"
             android:layout_height="50dp"
             android:layout_marginStart="150dp"
@@ -273,7 +273,7 @@
 
         <!-- New Pin Confirm input text -->
         <EditText
-            android:id="@+id/ConfirmNewPinEditText"
+            android:id="@+id/confirmNewPinEditText"
             android:layout_width="178dp"
             android:layout_height="52dp"
             android:layout_marginStart="150dp"
@@ -317,7 +317,7 @@
 
 
     <Button
-        android:id="@+id/Login_Button"
+        android:id="@+id/updatePin"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="163dp"
         android:layout_height="76dp"

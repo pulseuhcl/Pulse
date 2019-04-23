@@ -4,11 +4,6 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.widget.Toast;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -20,13 +15,15 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class AsyncRegister extends AsyncTask<String, String, String> {
-    private Register_Page register_page;
+public class AsyncSetPin extends AsyncTask<String, String, String> {
+    private Settings_Page settings_page;
     HttpURLConnection conn;
     URL url = null;
     User currentUser = new User();
-    public AsyncRegister(Register_Page register_page){
-        this.register_page = register_page;
+    String newPin;
+
+    public AsyncSetPin(Settings_Page settings_page){
+        this.settings_page = settings_page;
     }
 
     @Override
@@ -38,7 +35,7 @@ public class AsyncRegister extends AsyncTask<String, String, String> {
     @Override
     protected String doInBackground(String... params){
         try{
-            url = new URL("http://ed11e0fa.ngrok.io/pulse_api/register.php");
+            url = new URL("http://ed11e0fa.ngrok.io/pulse_api/setPin.php");
         }catch(MalformedURLException e){
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -57,21 +54,21 @@ public class AsyncRegister extends AsyncTask<String, String, String> {
 
             // Append parameters to URL
             Uri.Builder builder = new Uri.Builder()
-                    .appendQueryParameter("firstName", params[0])
-                    .appendQueryParameter("lastName", params[1])
-                    .appendQueryParameter("initials", params[2])
-                    .appendQueryParameter("username", params[3])
-                    .appendQueryParameter("phoneNumber", params[4])
-                    .appendQueryParameter("password", params[5]);
-            String query = builder.build().getEncodedQuery();
+                    .appendQueryParameter("username", params[0])
+                    .appendQueryParameter("password", params[1])
+                    .appendQueryParameter("currentPin", params[2])
+                    .appendQueryParameter("newPin", params[3]);
 
-            // set the params to the User object for later verification
+            String query = builder.build().getEncodedQuery();
             currentUser.setUserName(params[0]);
             currentUser.setPassword(params[1]);
-            currentUser.setFirstName(params[2]);
-            currentUser.setLastName(params[3]);
-            currentUser.setInitials(params[4]);
-            currentUser.setPhoneNumber(params[5]);
+            currentUser.setFirstName(params[4]);
+            currentUser.setLastName(params[5]);
+            currentUser.setInitials(params[6]);
+            currentUser.setPhoneNumber(params[7]);
+            // set this variable temporarily and if the server returns that it has been set correctly,
+            // assign it to the user object in postExecute()
+            newPin = params[3];
 
             // Open connection for sending data
             OutputStream os = conn.getOutputStream();
@@ -102,7 +99,6 @@ public class AsyncRegister extends AsyncTask<String, String, String> {
                     result.append(line);
                     line = reader.readLine();
                 }
-                // Pass data to onPostExecute method
                 return (result.toString().trim());
             }else{
                 return("unsuccessful");
@@ -119,19 +115,21 @@ public class AsyncRegister extends AsyncTask<String, String, String> {
     protected void onPostExecute(String result){
         // this method will be running on a UI thread
 
-        if(result.contains("success")){
-            Toast.makeText(register_page, "success", Toast.LENGTH_LONG).show();
+        if(result.equals("success")){
+            Toast.makeText(settings_page, result, Toast.LENGTH_LONG).show();
+            currentUser.setPinNumber(newPin);
             // give a brief wait so the user can see the login success Toast
-            Intent intent = new Intent(register_page, Landing_Page.class);
+            Intent intent = new Intent(settings_page, User_Logged_In.class);
+            // this passes the serialized user object to the next activity for further use
 
-            //intent.putExtra("currentUser", currentUser);
-            register_page.startActivity(intent);
-        }else if (result.equals("duplicate") ) {
-            // show if primary key conflict
-            Toast.makeText(register_page, result, Toast.LENGTH_LONG).show();
+            intent.putExtra("currentUser", currentUser);
+            settings_page.startActivity(intent);
+        }else if (result.equals("failure")) {
+            // If username and password does not match display the error
+            Toast.makeText(settings_page, "Login error!", Toast.LENGTH_LONG).show();
         }
         else if (result.equalsIgnoreCase("exception") || result.equalsIgnoreCase("unsuccessful")){
-            Toast.makeText(register_page, "Error. Something went wrong!", Toast.LENGTH_LONG).show();
+            Toast.makeText(settings_page, "Error. Something went wrong!", Toast.LENGTH_LONG).show();
         }
     }
 }

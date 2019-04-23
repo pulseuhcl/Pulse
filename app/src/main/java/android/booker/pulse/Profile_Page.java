@@ -14,7 +14,7 @@ public class Profile_Page extends AppCompatActivity {
     EditText lastNameEditText;
     EditText initialsEditText;
     EditText userNameEditText;
-    EditText passwordEditText;
+    EditText currentPasswordEditText;
     EditText phoneEditText;
     ImageButton profileIcon;
 
@@ -27,7 +27,7 @@ public class Profile_Page extends AppCompatActivity {
         lastNameEditText = findViewById(R.id.lastnameEditText);
         initialsEditText = findViewById(R.id.initialsEditText);
         userNameEditText = findViewById(R.id.usernameEditText);
-        passwordEditText = findViewById(R.id.passwordEditText);
+        currentPasswordEditText = findViewById(R.id.newPasswordEditText);
         phoneEditText = findViewById(R.id.PhoneNum_EditText);
         profileIcon = findViewById(R.id.UserButton);
         firstNameEditText.setText(currentUser.getFirstName());
@@ -35,10 +35,9 @@ public class Profile_Page extends AppCompatActivity {
         initialsEditText.setText(currentUser.getInitials());
         phoneEditText.setText(currentUser.getPhoneNumber());
         userNameEditText.setText(currentUser.getUserName());
-        //passwordEditText.setText(currentUser.getPassword());
-        //passwordEditText.setText(currentUser.getPassword());
+        currentPasswordEditText.setText(currentUser.getPassword());
 
-        Toast.makeText(this, currentUser.getFirstName(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, currentUser.getPassword(), Toast.LENGTH_SHORT).show();
         Glide
                 .with(this)
                 .load(getDrawable(R.drawable.user))
