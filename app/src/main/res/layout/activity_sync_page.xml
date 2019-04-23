@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_dark"
+    tools:context=".Landing_Page">
+
+    <!--     Main Nav bar Begin       -->
+    <!-- bar -->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="415dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/DarkGray"
+        android:gravity="center_horizontal"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- user icon -->
+    <ImageButton
+        android:id="@+id/UserButton"
+        android:layout_width="67dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="3dp"
+        android:background="@color/transparent"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/user" />
+
+
+    <!-- Gear icon -->
+    <ImageButton
+        android:id="@+id/GearButton"
+        android:layout_width="67dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="28dp"
+        android:background="@color/transparent"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/gear" />
+
+
+    <!-- Flicker text -->
+    <TextView
+        android:id="@+id/Flicker_Title_Text"
+        android:layout_width="191dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/viga"
+        android:gravity="center_horizontal"
+        android:text="@string/Flicker_Title_Text"
+        android:textColor="@color/DustyGreen"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintEnd_toStartOf="@+id/GearButton"
+        app:layout_constraintStart_toEndOf="@+id/UserButton"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Flicker" />
+    <!--       Main Nav bar End         -->
+
+
+    <Button
+        android:id="@+id/loginButton"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="163dp"
+        android:layout_height="76dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="124dp"
+        android:background="@color/Teal"
+        android:backgroundTint="@color/shadow_black"
+        android:backgroundTintMode="screen"
+        android:elevation="4dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Sync"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:typeface="monospace"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="textMultiLine"
+        android:text="Hold phone close to smartlock and hit SYNC when ready. Once button is pressed do NOT move phone away from lock until prompted to do so."
+        android:textColor="@color/Teal"
+        android:textSize="34dp"
+        android:textStyle="normal|bold"
+        app:layout_constraintBottom_toTopOf="@+id/loginButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Flicker_Title_Text" />
+
+
+</android.support.constraint.ConstraintLayout>
