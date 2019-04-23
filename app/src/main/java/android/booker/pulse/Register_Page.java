@@ -19,7 +19,7 @@ public class Register_Page extends AppCompatActivity {
     EditText passwordEditText;
     EditText confirmPasswordEditText;
     Button signupButton;
-    String firstName; String lastName; String initials; String email; String phoneNumber;
+    String firstName; String lastName; String initials; String username; String phoneNumber;
     String password; String confirmPassword;
 
     @Override
@@ -48,16 +48,16 @@ public class Register_Page extends AppCompatActivity {
         firstName = firstNameEditText.getText().toString();
         lastName = lastNameEditText.getText().toString();
         initials = initialsEditText.getText().toString();
-        email = emailEditText.getText().toString();
+        username = emailEditText.getText().toString();
         phoneNumber = phoneNumberEditText.getText().toString();
         password = passwordEditText.getText().toString();
         confirmPassword = confirmPasswordEditText.getText().toString();
         if(password.equals(confirmPassword)){
             new AsyncRegister(Register_Page.this).execute(firstName, lastName, initials,
-                    email, phoneNumber, password, confirmPassword);
+                    username, phoneNumber, password);
         }
         else{
-            Toast.makeText(this, "Passwords do not match! Try again.", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Incorrect username or password. Please try again", Toast.LENGTH_LONG).show();
         }
     }
 }

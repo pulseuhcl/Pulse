@@ -38,7 +38,7 @@ public class AsyncRegister extends AsyncTask<String, String, String> {
     @Override
     protected String doInBackground(String... params){
         try{
-            url = new URL("http://5acf6fcf.ngrok.io/pulse_api/login.php");
+            url = new URL("http://ed11e0fa.ngrok.io/pulse_api/register.php");
         }catch(MalformedURLException e){
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -57,13 +57,12 @@ public class AsyncRegister extends AsyncTask<String, String, String> {
 
             // Append parameters to URL
             Uri.Builder builder = new Uri.Builder()
-                    .appendQueryParameter("username", params[0])
-                    .appendQueryParameter("password", params[1])
-                    .appendQueryParameter("firstname", params[2])
-                    .appendQueryParameter("lastname", params[3])
-                    .appendQueryParameter("initials", params[4])
-                    .appendQueryParameter("phoneNumber", params[5])
-                    .appendQueryParameter("pinNumber", params[6]);
+                    .appendQueryParameter("firstName", params[0])
+                    .appendQueryParameter("lastName", params[1])
+                    .appendQueryParameter("initials", params[2])
+                    .appendQueryParameter("username", params[3])
+                    .appendQueryParameter("phoneNumber", params[4])
+                    .appendQueryParameter("password", params[5]);
             String query = builder.build().getEncodedQuery();
 
             // set the params to the User object for later verification
@@ -73,7 +72,6 @@ public class AsyncRegister extends AsyncTask<String, String, String> {
             currentUser.setLastName(params[3]);
             currentUser.setInitials(params[4]);
             currentUser.setPhoneNumber(params[5]);
-            currentUser.setPinNumber(params[6]);
 
             // Open connection for sending data
             OutputStream os = conn.getOutputStream();
@@ -104,21 +102,6 @@ public class AsyncRegister extends AsyncTask<String, String, String> {
                     result.append(line);
                     line = reader.readLine();
                 }
-                try{
-                    JSONArray jsonArray = new JSONArray(result.toString());
-                    for(int i = 0; i < jsonArray.length(); i++){
-                        JSONObject object = jsonArray.getJSONObject(i);
-                        currentUser.setUserName(object.getString("username"));
-                        currentUser.setPassword(object.getString("password"));
-                        currentUser.setFirstName(object.getString("firstname"));
-                        currentUser.setLastName(object.getString("lastname"));
-                        currentUser.setInitials(object.getString("initials"));
-                        currentUser.setPhoneNumber(object.getString("phoneNumber"));
-                        currentUser.setPinNumber(object.getString("pinNumber"));
-                    }
-                }catch(JSONException e){
-                    e.printStackTrace();
-                }
                 // Pass data to onPostExecute method
                 return (result.toString().trim());
             }else{
@@ -136,16 +119,16 @@ public class AsyncRegister extends AsyncTask<String, String, String> {
     protected void onPostExecute(String result){
         // this method will be running on a UI thread
 
-        if(result.contains(currentUser.getPassword())){
-            Toast.makeText(register_page, result, Toast.LENGTH_LONG).show();
+        if(result.contains("success")){
+            Toast.makeText(register_page, "success", Toast.LENGTH_LONG).show();
             // give a brief wait so the user can see the login success Toast
             Intent intent = new Intent(register_page, Landing_Page.class);
 
             //intent.putExtra("currentUser", currentUser);
             register_page.startActivity(intent);
-        }else if (!result.contains(currentUser.getPassword())) {
+        }else if (result.equals("duplicate") ) {
             // If username and password does not match display the error
-            Toast.makeText(register_page, "Login error!", Toast.LENGTH_LONG).show();
+            Toast.makeText(register_page, result, Toast.LENGTH_LONG).show();
         }
         else if (result.equalsIgnoreCase("exception") || result.equalsIgnoreCase("unsuccessful")){
             Toast.makeText(register_page, "Error. Something went wrong!", Toast.LENGTH_LONG).show();

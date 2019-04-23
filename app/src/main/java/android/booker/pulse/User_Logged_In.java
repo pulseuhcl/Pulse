@@ -1,13 +1,10 @@
 package android.booker.pulse;
-        import java.io.Serializable;
 
         import android.content.Intent;
         import android.support.v7.app.AppCompatActivity;
         import android.os.Bundle;
         import android.view.View;
-        import android.widget.Button;
         import android.widget.ImageButton;
-        import android.widget.ImageView;
         import android.widget.Toast;
 
         import com.bumptech.glide.Glide;
@@ -15,18 +12,16 @@ package android.booker.pulse;
 public class User_Logged_In extends AppCompatActivity {
     User currentUser = new User();
     private ImageButton gearIcon;
-    private ImageButton userIcon;
     private ImageButton unlockButton;
     private ImageButton sendCodeButton;
     private ImageButton profileButton;
-
+    private User_Logged_In userLoggedIn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user__logged__in);
         currentUser = getIntent().getExtras().getParcelable("currentUser");
         gearIcon = findViewById(R.id.GearButton);
-        userIcon = findViewById(R.id.UserButton);
         unlockButton = findViewById(R.id.unlockButton);
         sendCodeButton = findViewById(R.id.sendCodeButton);
         profileButton = findViewById(R.id.UserButton);
@@ -37,7 +32,7 @@ public class User_Logged_In extends AppCompatActivity {
         Glide
                 .with(this)
                 .load(getDrawable(R.drawable.user))
-                .into(userIcon);
+                .into(profileButton);
         Glide
                 .with(this)
                 .load(getDrawable(R.drawable.gear))
@@ -60,7 +55,7 @@ public class User_Logged_In extends AppCompatActivity {
     };
 
     private void profileButtonClicked(){
-        Intent intent = new Intent(User_Logged_In.this, Profile_Page.class);
+        Intent intent = new Intent(getApplicationContext(), Profile_Page.class);
         intent.putExtra("currentUser", currentUser);
         startActivity(intent);
     }

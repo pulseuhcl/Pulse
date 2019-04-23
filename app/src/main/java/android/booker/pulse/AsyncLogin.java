@@ -38,7 +38,7 @@ public class AsyncLogin extends AsyncTask<String, String, String> {
     @Override
     protected String doInBackground(String... params){
         try{
-            url = new URL("http://0a1b65bd.ngrok.io/pulse_api/login.php");
+            url = new URL("http://ed11e0fa.ngrok.io/pulse_api/login.php");
         }catch(MalformedURLException e){
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -98,10 +98,12 @@ public class AsyncLogin extends AsyncTask<String, String, String> {
                     JSONArray jsonArray = new JSONArray(result.toString());
                     for(int i = 0; i < jsonArray.length(); i++){
                         JSONObject object = jsonArray.getJSONObject(i);
-                        currentUser.setUserName(object.getString("username"));
+                        currentUser.setUserName(object.getString("userID"));
                         currentUser.setPassword(object.getString("password"));
                         currentUser.setFirstName(object.getString("firstname"));
                         currentUser.setLastName(object.getString("lastname"));
+                        currentUser.setPhoneNumber(object.getString("phoneNumber"));
+                        currentUser.setInitials(object.getString("initials"));
                     }
                 }catch(JSONException e){
                     e.printStackTrace();

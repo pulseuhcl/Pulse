@@ -513,7 +513,7 @@
             android:backgroundTint="@color/transparent"
             android:ems="10"
             android:gravity="center|left"
-            android:inputType="textPersonName"
+            android:inputType="textPassword"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
