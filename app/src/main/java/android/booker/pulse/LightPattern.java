@@ -1,4 +1,4 @@
-package android.booker.light_module;
+package android.booker.pulse;
 
 import android.Manifest;
 import android.content.Context;
@@ -21,7 +21,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 
 
-public class MainActivity extends AppCompatActivity {
+public class LightPattern extends AppCompatActivity {
     private Button flashButton;
     private Button stopButton;
     Boolean light = true;
@@ -155,7 +155,6 @@ public class MainActivity extends AppCompatActivity {
     };
 
     // Event listener for focus leave pinEditText
-
 
 
     private void StopButtonClicked(){
