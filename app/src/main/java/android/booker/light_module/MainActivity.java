@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
             // sum of consecutive ones to give the time for the flash to stay on
             int delayForZeros = 20;// I need to fix it
             int delayForOnes = 20;//
-            ///////
+            /////
             startPattern = true;
             Boolean isOn = false;
             long futureTime=System.currentTimeMillis();
