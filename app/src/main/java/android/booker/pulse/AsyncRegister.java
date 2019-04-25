@@ -22,9 +22,9 @@ import java.net.URL;
 
 public class AsyncRegister extends AsyncTask<String, String, String> {
     private Register_Page register_page;
-    HttpURLConnection conn;
-    URL url = null;
-    User currentUser = new User();
+    private HttpURLConnection conn;
+    private URL url = null;
+    private User currentUser = new User();
     public AsyncRegister(Register_Page register_page){
         this.register_page = register_page;
     }
@@ -62,7 +62,8 @@ public class AsyncRegister extends AsyncTask<String, String, String> {
                     .appendQueryParameter("initials", params[2])
                     .appendQueryParameter("username", params[3])
                     .appendQueryParameter("phoneNumber", params[4])
-                    .appendQueryParameter("password", params[5]);
+                    .appendQueryParameter("password", params[5])
+                    .appendQueryParameter("defaultPin", "111");
             String query = builder.build().getEncodedQuery();
 
             // set the params to the User object for later verification

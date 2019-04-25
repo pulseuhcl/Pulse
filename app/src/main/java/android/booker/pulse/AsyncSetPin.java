@@ -18,9 +18,9 @@ import java.net.URL;
 public class AsyncSetPin extends AsyncTask<String, String, String> {
     private Settings_Page settings_page;
     HttpURLConnection conn;
-    URL url = null;
-    User currentUser = new User();
-    String newPin;
+    private URL url = null;
+    private User currentUser = new User();
+    private String newPin;
 
     public AsyncSetPin(Settings_Page settings_page){
         this.settings_page = settings_page;

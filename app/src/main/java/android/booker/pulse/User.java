@@ -99,11 +99,4 @@ public class User implements Parcelable {
             return new User[size];
         }
     };
-//
-//    public String generatePattern(){
-//        // take user pin number
-//        // convert to byte string or byte array
-//        // return this ^^ ^^
-//        //this.pinNumber
-//    }
 }

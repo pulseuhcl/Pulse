@@ -37,7 +37,6 @@ public class User_Logged_In extends AppCompatActivity {
         profileButton.setOnClickListener(profileButtonListener);
         settingsButton.setOnClickListener(settingsPageListener);
         unlockButton.setOnClickListener(unlockButtonListener);
-        CameraController cameraController = new CameraController(this, currentUser.getPinNumber());
         //testing to see if the user object was passed successfully via intent
         Toast.makeText(getApplicationContext(), "password " + currentUser.getPassword(), Toast.LENGTH_LONG).show();
 

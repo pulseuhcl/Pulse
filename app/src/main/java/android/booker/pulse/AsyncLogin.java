@@ -22,9 +22,9 @@ import java.net.URL;
 
 public class AsyncLogin extends AsyncTask<String, String, String> {
     private Login_Page login_page;
-    HttpURLConnection conn;
-    URL url = null;
-    User currentUser = new User();
+    private HttpURLConnection conn;
+    private URL url = null;
+    private User currentUser = new User();
     public AsyncLogin(Login_Page login_page){
         this.login_page = login_page;
     }
