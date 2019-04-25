@@ -62,8 +62,7 @@ public class AsyncRegister extends AsyncTask<String, String, String> {
                     .appendQueryParameter("initials", params[2])
                     .appendQueryParameter("username", params[3])
                     .appendQueryParameter("phoneNumber", params[4])
-                    .appendQueryParameter("password", params[5])
-                    .appendQueryParameter("defaultPin", "111");
+                    .appendQueryParameter("password", params[5]);
             String query = builder.build().getEncodedQuery();
 
             // set the params to the User object for later verification

@@ -35,7 +35,6 @@ public class Profile_Page extends AppCompatActivity {
         initialsEditText.setText(currentUser.getInitials());
         phoneEditText.setText(currentUser.getPhoneNumber());
         userNameEditText.setText(currentUser.getUserName());
-        currentPasswordEditText.setText(currentUser.getPassword());
 
         Toast.makeText(this, currentUser.getPassword(), Toast.LENGTH_SHORT).show();
         Glide
