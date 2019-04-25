@@ -50,6 +50,8 @@ public class Login_Page extends AppCompatActivity {
     public void LoginButtonClicked() {
         username = usernameInput.getText().toString();
         password = passwordInput.getText().toString();
-        new AsyncLogin(Login_Page.this).execute(username, password);
+        if(!username.isEmpty() && !password.isEmpty()){
+            new AsyncLogin(Login_Page.this).execute(username, password);
+        }
     }
 }

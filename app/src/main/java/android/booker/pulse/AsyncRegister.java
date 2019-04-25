@@ -38,7 +38,7 @@ public class AsyncRegister extends AsyncTask<String, String, String> {
     @Override
     protected String doInBackground(String... params){
         try{
-            url = new URL("http://ed11e0fa.ngrok.io/pulse_api/register.php");
+            url = new URL("http://73d1b4b6.ngrok.io/pulse_api/register.php");
         }catch(MalformedURLException e){
             // TODO Auto-generated catch block
             e.printStackTrace();
