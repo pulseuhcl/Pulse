@@ -24,7 +24,7 @@ public class AsyncLogin extends AsyncTask<User, String, String> {
     private Login_Page login_page;
     private HttpURLConnection conn;
     private URL url = null;
-    private User currentUser = new User();
+
     public AsyncLogin(Login_Page login_page){
         this.login_page = login_page;
     }
@@ -61,9 +61,6 @@ public class AsyncLogin extends AsyncTask<User, String, String> {
                     .appendQueryParameter("password", users[0].getPassword());
             String query = builder.build().getEncodedQuery();
 
-//            currentUser.setUserName(users[0].getUserName());
-//            currentUser.setPassword(users[0].getPassword());
-            // Open connection for sending data
             OutputStream os = conn.getOutputStream();
             BufferedWriter writer = new BufferedWriter(
                     new OutputStreamWriter(os, "UTF-8"));
@@ -92,24 +89,10 @@ public class AsyncLogin extends AsyncTask<User, String, String> {
                     result.append(line);
                     line = reader.readLine();
                 }
-                try{
-                    JSONArray jsonArray = new JSONArray(result.toString());
-                    for(int i = 0; i < jsonArray.length(); i++){
-                        JSONObject object = jsonArray.getJSONObject(i);
-                        currentUser.setUserName(object.getString("userID"));
-                        currentUser.setPassword(object.getString("password"));
-                        currentUser.setFirstName(object.getString("firstname"));
-                        currentUser.setLastName(object.getString("lastname"));
-                        currentUser.setPhoneNumber(object.getString("phoneNumber"));
-                        currentUser.setInitials(object.getString("initials"));
-                        currentUser.setPinNumber(object.getString("pinNumber"));
-                    }
-                }catch(JSONException e){
-                    e.printStackTrace();
-                }
                 // Pass data to onPostExecute method
                 return (result.toString().trim());
-            }else{
+            }
+            else{
                 return("unsuccessful");
             }
         }catch(IOException e){
@@ -123,21 +106,31 @@ public class AsyncLogin extends AsyncTask<User, String, String> {
     @Override
     protected void onPostExecute(String result){
         // this method will be running on a UI thread
+        User retrievedUser = new User();
 
-        if(result.contains(currentUser.getPassword()) && result.contains(currentUser.getUserName())){
-            Toast.makeText(login_page, result, Toast.LENGTH_LONG).show();
-            // give a brief wait so the user can see the login success Toast
-            Intent intent = new Intent(login_page, User_Logged_In.class);
-            // this passes the serialized user object to the next activity for further use
-
-            intent.putExtra("currentUser", currentUser);
+        Intent intent = new Intent(login_page, User_Logged_In.class);
+        // this passes the serialized user object to the next activity for further use
+        if(!result.equals("[]")){
+            try{
+                JSONArray jsonArray = new JSONArray(result);
+                for(int i = 0; i < jsonArray.length(); i++){
+                    JSONObject object = jsonArray.getJSONObject(i);
+                    retrievedUser.setUserName(object.getString("userID"));
+                    retrievedUser.setPassword(object.getString("password"));
+                    retrievedUser.setFirstName(object.getString("firstname"));
+                    retrievedUser.setLastName(object.getString("lastname"));
+                    retrievedUser.setPhoneNumber(object.getString("phoneNumber"));
+                    retrievedUser.setInitials(object.getString("initials"));
+                    retrievedUser.setPinNumber(object.getString("pinNumber"));
+                }
+            }catch(JSONException e){
+                e.printStackTrace();
+            }
+            intent.putExtra("currentUser", retrievedUser);
             login_page.startActivity(intent);
-        }else if (!result.contains(currentUser.getPassword())) {
-            // If username and password does not match display the error
-            Toast.makeText(login_page, "Login error!", Toast.LENGTH_LONG).show();
         }
-        else if (result.equalsIgnoreCase("exception") || result.equalsIgnoreCase("unsuccessful")){
-            Toast.makeText(login_page, "Error. Something went wrong!", Toast.LENGTH_LONG).show();
+        else{
+            Toast.makeText(login_page, "Incorrect login information", Toast.LENGTH_LONG).show();
         }
     }
 }

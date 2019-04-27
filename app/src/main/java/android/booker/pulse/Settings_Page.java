@@ -1,5 +1,6 @@
 package android.booker.pulse;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -28,6 +29,7 @@ public class Settings_Page extends AppCompatActivity {
         setContentView(R.layout.activity_settings_page);
         currentUser = getIntent().getExtras().getParcelable("currentUser");
         profileButton = findViewById(R.id.UserButton);
+        profileButton.setOnClickListener(profileButtonListener);
         settingsButton = findViewById(R.id.GearButton);
         currentPinEditText = findViewById(R.id.currentPinEditText);
         newPinEditText = findViewById(R.id.newPinEditText);
@@ -57,6 +59,19 @@ public class Settings_Page extends AppCompatActivity {
             updatePinButtonClicked();
         }
     };
+
+    private View.OnClickListener profileButtonListener = new View.OnClickListener(){
+        @Override
+        public void onClick(View v){
+            profileButtonClicked();
+        }
+    };
+
+    private void profileButtonClicked(){
+        Intent intent = new Intent(getApplicationContext(), Profile_Page.class);
+        intent.putExtra("currentUser", currentUser);
+        startActivity(intent);
+    }
 
     private void updatePinButtonClicked(){
         currentPin = currentPinEditText.getText().toString();

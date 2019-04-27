@@ -46,7 +46,7 @@ public class Login_Page extends AppCompatActivity {
 
     // Functions go below this line.
     public void LoginButtonClicked() {
-        User currentUser = new User(usernameInput.getText().toString(), passwordInput.getText().toString());
+        User currentUser = new User(usernameInput.getText().toString().replaceAll("\\s", ""), passwordInput.getText().toString());
         if(!currentUser.getUserName().isEmpty() && !currentUser.getPassword().isEmpty()){
             new AsyncLogin(Login_Page.this).execute(currentUser);
         }

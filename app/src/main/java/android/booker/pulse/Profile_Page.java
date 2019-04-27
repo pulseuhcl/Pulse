@@ -1,5 +1,6 @@
 package android.booker.pulse;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -21,7 +22,9 @@ public class Profile_Page extends AppCompatActivity {
     EditText confirmPasswordEditText;
     EditText phoneEditText;
     ImageButton profileIcon;
+    ImageButton settingsButton;
     Button editButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +42,8 @@ public class Profile_Page extends AppCompatActivity {
         profileIcon = findViewById(R.id.UserButton);
         editButton = findViewById(R.id.Edit_Button);
         editButton.setOnClickListener(EditButtonListener);
+        settingsButton = findViewById(R.id.GearButton);
+        settingsButton.setOnClickListener(settingsButtonListener);
         firstNameEditText.setText(currentUser.getFirstName());
         lastNameEditText.setText(currentUser.getLastName());
         initialsEditText.setText(currentUser.getInitials());
@@ -51,12 +56,25 @@ public class Profile_Page extends AppCompatActivity {
                 .into(profileIcon);
     }
 
+    private View.OnClickListener settingsButtonListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            settingsButtonClicked();
+        }
+    };
+
     private View.OnClickListener EditButtonListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             editButtonClicked();
         }
     };
+
+    private void settingsButtonClicked(){
+        Intent intent = new Intent(getApplicationContext(), Settings_Page.class);
+        intent.putExtra("currentUser", currentUser);
+        startActivity(intent);
+    }
 
     private void editButtonClicked(){
         User newUser = new User(firstNameEditText.getText().toString(), lastNameEditText.getText().toString(),
