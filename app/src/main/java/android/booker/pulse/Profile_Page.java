@@ -2,6 +2,8 @@ package android.booker.pulse;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
@@ -15,8 +17,11 @@ public class Profile_Page extends AppCompatActivity {
     EditText initialsEditText;
     EditText userNameEditText;
     EditText currentPasswordEditText;
+    EditText newPasswordEditText;
+    EditText confirmPasswordEditText;
     EditText phoneEditText;
     ImageButton profileIcon;
+    Button editButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,15 +32,18 @@ public class Profile_Page extends AppCompatActivity {
         lastNameEditText = findViewById(R.id.lastnameEditText);
         initialsEditText = findViewById(R.id.initialsEditText);
         userNameEditText = findViewById(R.id.usernameEditText);
-        currentPasswordEditText = findViewById(R.id.newPasswordEditText);
+        currentPasswordEditText = findViewById(R.id.currentPasswordEditText);
+        newPasswordEditText = findViewById(R.id.newPasswordEditText);
+        confirmPasswordEditText = findViewById(R.id.confirmPasswordEditText);
         phoneEditText = findViewById(R.id.PhoneNum_EditText);
         profileIcon = findViewById(R.id.UserButton);
+        editButton = findViewById(R.id.Edit_Button);
+        editButton.setOnClickListener(EditButtonListener);
         firstNameEditText.setText(currentUser.getFirstName());
         lastNameEditText.setText(currentUser.getLastName());
         initialsEditText.setText(currentUser.getInitials());
         phoneEditText.setText(currentUser.getPhoneNumber());
         userNameEditText.setText(currentUser.getUserName());
-
         Toast.makeText(this, currentUser.getPassword(), Toast.LENGTH_SHORT).show();
         Glide
                 .with(this)
@@ -43,5 +51,23 @@ public class Profile_Page extends AppCompatActivity {
                 .into(profileIcon);
     }
 
+    private View.OnClickListener EditButtonListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            editButtonClicked();
+        }
+    };
 
+    private void editButtonClicked(){
+        User newUser = new User(firstNameEditText.getText().toString(), lastNameEditText.getText().toString(),
+                initialsEditText.getText().toString(), userNameEditText.getText().toString(), currentPasswordEditText.getText().toString(),
+                newPasswordEditText.getText().toString(), confirmPasswordEditText.getText().toString(), phoneEditText.getText().toString());
+
+        if(newUser.getNewPassword().equals(newUser.getConfirmPassword())){
+            new AsyncProfileUpdate(Profile_Page.this).execute(newUser, currentUser);
+        }
+        else{
+            Toast.makeText(this, "Passwords do not match! Please try again.", Toast.LENGTH_LONG).show();
+        }
+    }
 }

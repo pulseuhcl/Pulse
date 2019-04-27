@@ -19,14 +19,17 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Deque;
+import java.util.LinkedList;
 
-public class AsyncLogin extends AsyncTask<User, String, String> {
-    private Login_Page login_page;
+public class AsyncProfileUpdate extends AsyncTask<User, String, String> {
+    private Profile_Page profile_page;
     private HttpURLConnection conn;
     private URL url = null;
-    private User currentUser = new User();
-    public AsyncLogin(Login_Page login_page){
-        this.login_page = login_page;
+    //private User currentUser = new User();
+    public AsyncProfileUpdate(Profile_Page profile_page){
+        this.profile_page = profile_page;
     }
 
     @Override
@@ -36,9 +39,9 @@ public class AsyncLogin extends AsyncTask<User, String, String> {
     }
 
     @Override
-    protected String doInBackground(User... users){
+    protected String doInBackground(User ...users){
         try{
-            url = new URL("http://fea9dcfa.ngrok.io/pulse_api/login.php");
+            url = new URL("http://fea9dcfa.ngrok.io/pulse_api/UpdateProfile.php");
         }catch(MalformedURLException e){
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -57,13 +60,16 @@ public class AsyncLogin extends AsyncTask<User, String, String> {
 
             // Append parameters to URL
             Uri.Builder builder = new Uri.Builder()
-                    .appendQueryParameter("username", users[0].getUserName())
-                    .appendQueryParameter("password", users[0].getPassword());
+                    .appendQueryParameter("firstName", users[0].getFirstName())
+                    .appendQueryParameter("lastName", users[0].getLastName())
+                    .appendQueryParameter("initials", users[0].getInitials())
+                    .appendQueryParameter("currentUsername", users[1].getUserName())
+                    .appendQueryParameter("newUsername", users[0].getUserName())
+                    .appendQueryParameter("phoneNumber", users[0].getPhoneNumber())
+                    .appendQueryParameter("currentPassword", users[0].getPassword())
+                    .appendQueryParameter("newPassword", users[0].getNewPassword());
             String query = builder.build().getEncodedQuery();
 
-//            currentUser.setUserName(users[0].getUserName());
-//            currentUser.setPassword(users[0].getPassword());
-            // Open connection for sending data
             OutputStream os = conn.getOutputStream();
             BufferedWriter writer = new BufferedWriter(
                     new OutputStreamWriter(os, "UTF-8"));
@@ -92,21 +98,6 @@ public class AsyncLogin extends AsyncTask<User, String, String> {
                     result.append(line);
                     line = reader.readLine();
                 }
-                try{
-                    JSONArray jsonArray = new JSONArray(result.toString());
-                    for(int i = 0; i < jsonArray.length(); i++){
-                        JSONObject object = jsonArray.getJSONObject(i);
-                        currentUser.setUserName(object.getString("userID"));
-                        currentUser.setPassword(object.getString("password"));
-                        currentUser.setFirstName(object.getString("firstname"));
-                        currentUser.setLastName(object.getString("lastname"));
-                        currentUser.setPhoneNumber(object.getString("phoneNumber"));
-                        currentUser.setInitials(object.getString("initials"));
-                        currentUser.setPinNumber(object.getString("pinNumber"));
-                    }
-                }catch(JSONException e){
-                    e.printStackTrace();
-                }
                 // Pass data to onPostExecute method
                 return (result.toString().trim());
             }else{
@@ -124,20 +115,19 @@ public class AsyncLogin extends AsyncTask<User, String, String> {
     protected void onPostExecute(String result){
         // this method will be running on a UI thread
 
-        if(result.contains(currentUser.getPassword()) && result.contains(currentUser.getUserName())){
-            Toast.makeText(login_page, result, Toast.LENGTH_LONG).show();
+        if(result.contains("success")){
+            Toast.makeText(profile_page, "success", Toast.LENGTH_LONG).show();
             // give a brief wait so the user can see the login success Toast
-            Intent intent = new Intent(login_page, User_Logged_In.class);
-            // this passes the serialized user object to the next activity for further use
+            Intent intent = new Intent(profile_page, Landing_Page.class);
 
-            intent.putExtra("currentUser", currentUser);
-            login_page.startActivity(intent);
-        }else if (!result.contains(currentUser.getPassword())) {
-            // If username and password does not match display the error
-            Toast.makeText(login_page, "Login error!", Toast.LENGTH_LONG).show();
+            //intent.putExtra("currentUser", currentUser);
+            profile_page.startActivity(intent);
+        }else if (result.equals("duplicate") ) {
+            // show if primary key conflict
+            Toast.makeText(profile_page, result, Toast.LENGTH_LONG).show();
         }
         else if (result.equalsIgnoreCase("exception") || result.equalsIgnoreCase("unsuccessful")){
-            Toast.makeText(login_page, "Error. Something went wrong!", Toast.LENGTH_LONG).show();
+            Toast.makeText(profile_page, "Error. Something went wrong!", Toast.LENGTH_LONG).show();
         }
     }
 }

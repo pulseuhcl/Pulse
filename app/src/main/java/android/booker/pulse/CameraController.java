@@ -13,7 +13,7 @@ public class CameraController {
     private Boolean light = true;
     private CameraManager cameraManager;
     private String cameraID;
-    private Boolean startPattern = false;
+    //private Boolean startPattern = false;
     private String userPin;
 
     public CameraController(Context loggedInContext, String userPin){
@@ -21,6 +21,7 @@ public class CameraController {
         this.userPin = userPin;
     }
 
+    // call this method to get the ID of the rear camera and assign it to cameraID
     public void GetCameraIDList(){
         try{
             cameraID = cameraManager.getCameraIdList()[0];
@@ -93,7 +94,7 @@ public class CameraController {
             int delayForZeros = 40;// I need to fix it
             int delayForOnes = 40;//
             /////
-            startPattern = true;
+            //startPattern = true;
             Boolean isOn = false;
             long futureTime=System.currentTimeMillis();
 
@@ -137,5 +138,4 @@ public class CameraController {
     public void executePattern(){
         executor.execute(flasher);
     }
-
 }

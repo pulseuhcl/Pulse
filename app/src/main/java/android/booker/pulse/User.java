@@ -11,6 +11,8 @@ public class User implements Parcelable {
     private String initials;
     private String phoneNumber;
     private String pinNumber;
+    private String newPassword;
+    private String confirmPassword;
 
     public String getUserName(){
         return userName;
@@ -34,6 +36,9 @@ public class User implements Parcelable {
 
     public String getPinNumber() {return pinNumber; }
 
+    public String getNewPassword() {return newPassword; }
+
+    public String getConfirmPassword() {return confirmPassword; }
 
     public void setUserName(String userName) {
         this.userName = userName;
@@ -59,6 +64,50 @@ public class User implements Parcelable {
 
     public void setPinNumber(String pinNumber) {this.pinNumber = pinNumber; }
 
+    public void setNewPassword(String newPinNumber) {this.newPassword = newPinNumber; }
+
+    public void setConfirmPassword(String confirmPinNumber) {this.confirmPassword = confirmPinNumber; }
+
+    public User(String username, String password, String firstName, String lastName, String initials,
+                String phoneNumber, String pinNumber, String newPassword, String confirmPassword) {
+        this.userName = username;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.initials = initials;
+        this.phoneNumber = phoneNumber;
+        this.pinNumber = pinNumber;
+        this.newPassword = newPassword;
+        this.confirmPassword = confirmPassword;
+
+    }
+
+    public User(){}
+
+    // constructor to be used on Login_Page
+    public User(String userName, String password){
+        this.userName = userName;
+        this.password = password;
+    }
+
+    // constructor to be used on Profile_Page
+    public User(String firstName, String lastName, String initials, String userName, String password, String newPassword,
+                String confirmPassword, String phoneNumber){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.initials = initials;
+        this.userName = userName;
+        this.password = password;
+        this.newPassword = newPassword;
+        this.confirmPassword = confirmPassword;
+        this.phoneNumber = phoneNumber;
+
+//        currentUser.setUserName(userNameEditText.getText().toString());
+//        currentUser.setPassword(userNameEditText.getText().toString());
+//        currentUser.setNewPassword(currentPasswordEditText.getText().toString());
+//        currentUser.setConfirmPassword(currentPasswordEditText.getText().toString());
+//        currentUser.setPhoneNumber(phoneEditText.getText().toString());
+    }
     @Override
     public int describeContents() {
         return 0;
@@ -73,9 +122,8 @@ public class User implements Parcelable {
         out.writeString(this.initials);
         out.writeString(this.phoneNumber);
         out.writeString(this.pinNumber);
-    }
-
-    public User() {
+        out.writeString(this.newPassword);
+        out.writeString(this.confirmPassword);
     }
 
     protected User(Parcel in) {
@@ -86,6 +134,8 @@ public class User implements Parcelable {
         this.initials = in.readString();
         this.phoneNumber = in.readString();
         this.pinNumber = in.readString();
+        this.newPassword = in.readString();
+        this.confirmPassword = in.readString();
     }
 
     public static final Creator<User> CREATOR = new Creator<User>() {
